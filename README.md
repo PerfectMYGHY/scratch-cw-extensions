@@ -1,14 +1,24 @@
 # extensions
 
-����������չ�����˺���������������Լ���Ҫ���������ȴ�`Turbowarp`������`extensions`�洢�⣬Ȼ�������`extensions`��`translations`�ļ��и��Ƶ����洢��Ŀ¼�У�Ȼ���޸�`translater.py`����ʹ�����Լ���APIȥ����ÿ������顣
+仅对所有扩展进行了汉化处理。如果你自己想要汉化，请先从`Turbowarp`上下载`extensions`存储库，然后吧它的`extensions`和`translations`文件夹复制到本存储库目录中，然后修改`translater.py`让其使用你自己的API去翻译每个代码块。
 
-Ȼ�������������ʼ���루ʱ�䲻�̣����밲װ`tqdm`��`requests`�Ⲣ���ʹ��`Python 3.8.5`����
+然后运行下面命令开始翻译（时间不短）（请安装`tqdm`、`requests`库并最好使用`Python 3.8.5`）：
 
 ```
 python translater.py
 ```
 
-ԭ���������ļ���
+## getter.js
+
+该文件时我根据Scratch创世界编辑器的代码情况编写的一段获取所有扩展的积木信息的程序。你可以自行修改，然后复制其内容，打开Scratch创世界编辑器，打开控制台，然后粘贴并运行。
+
+随后会自动加载所有扩展（这个过程可能有点长）并自动输出获取到的积木信息，然后将积木信息存放至`generated-block-data.json`。
+
+不过`generated-block-data.json`本来就有我帮你们获取到的积木信息，除非添加了扩展，否则不用改的。
+
+---
+
+原来的自述文件：
 
 ---
 
