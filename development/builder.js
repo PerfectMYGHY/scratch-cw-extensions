@@ -139,7 +139,7 @@ class ExtensionFile extends BuildFile {
    * @param {Record<string, Record<string, string>>} allTranslations All extension runtime translations
    * @param {Mode} mode
    */
-  constructor(absolutePath, slug, featured, allTranslations, mode) {
+  constructor(absolutePath, slug, featured, allTranslations, translationsMetaData, mode) {
     super(absolutePath);
     /** @type {string} */
     this.slug = slug;
@@ -147,6 +147,8 @@ class ExtensionFile extends BuildFile {
     this.featured = featured;
     /** @type {Record<string, Record<string, string>>} */
     this.allTranslations = allTranslations;
+    /** @type {Record<string, Record<string, string>>} */
+    this.translationsMetaData = translationsMetaData;
     /** @type {Mode} */
     this.mode = mode;
   }
@@ -174,7 +176,10 @@ class ExtensionFile extends BuildFile {
 
   getMetadata() {
     const data = fs.readFileSync(this.sourcePath, "utf-8");
-    return parseMetadata(data);
+    const result = parseMetadata(data);
+    result["name"] = this.translationsMetaData["zh-cn"][`${this.slug}@name`] || result["name"];
+    result["description"] = this.translationsMetaData["zh-cn"][`${this.slug}@description`] || result["description"];
+    return result;
   }
 
   validate() {
@@ -312,8 +317,8 @@ class HomepageFile extends BuildFile {
 
     this.host =
       mode === "development"
-        ? "http://localhost:8000/"
-        : "https://extensions.turbowarp.org/";
+        ? "http://localhost:8604/"
+        : "http://extensions.scratch-cw.top/";
   }
 
   getType() {
@@ -329,7 +334,7 @@ class HomepageFile extends BuildFile {
   }
 
   getRunExtensionURL(extensionSlug) {
-    return `https://turbowarp.org/editor?extension=${this.getFullExtensionURL(
+    return `https://www.scratch-cw.top/projects/editor?extension=${this.getFullExtensionURL(
       extensionSlug
     )}`;
   }
@@ -340,7 +345,7 @@ class HomepageFile extends BuildFile {
    */
   getRunSampleURL(sampleFile) {
     const path = encodeURIComponent(`samples/${sampleFile.getSlug()}`);
-    return `https://turbowarp.org/editor?project_url=${this.host}${path}`;
+    return `https://www.scratch-cw.top/projects/editor?project_url=${this.host}${path}`;
   }
 
   read() {
@@ -734,6 +739,7 @@ class Builder {
         extensionSlug,
         featured,
         translations["extension-runtime"],
+        translations["extension-metadata"],
         this.mode
       );
       extensionFiles[extensionSlug] = file;

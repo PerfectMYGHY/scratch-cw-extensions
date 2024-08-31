@@ -59,8 +59,8 @@ app.use((req, res) => {
   res.send("404 Not Found");
 });
 
-// The port the server runs on matters. The editor only treats port 8000 as unsandboxed.
-const PORT = 8000;
-app.listen(8000, () => {
+// The port the server runs on matters. The editor only treats port 8000 as unsandboxed. (服务器运行的端口很重要。编辑器仅将端口8000视为未加密。)
+const PORT = 8604;
+app.listen(PORT, () => {
   console.log(`Development server is ready on http://localhost:${PORT}/`);
 });
