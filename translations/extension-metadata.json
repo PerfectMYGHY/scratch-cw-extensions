@@ -1313,6 +1313,8 @@
         "veggiecan/mobilekeyboard@name": "Екранна Клавіатура"
     },
     "zh-cn": {
+        "webmaster/safeExt@description": "使你的项目更安全，防止别人偷盗你的项目并不标注原著，还抹掉原作者在作品里的声明。",
+        "webmaster/safeExt@name": "安全扩展",
         "-SIPC-/consoles@description": "与内置于浏览器开发工具中的 JavaScript 控制台交互的积木。",
         "-SIPC-/consoles@name": "控制台",
         "-SIPC-/time@description": "关于时间、日期和时区的积木。",

@@ -4304,6 +4304,12 @@
 		"Skyhigh173/json@_Advanced": "Nâng cao"
 	},
 	"zh-cn": {
+		"webmaster/safeExt@_Safe Extension": "安全扩展",
+		"webmaster/safeExt@_Warning: This extension is still under development and debugging,": "警告：此扩展仍在开发和调试中，",
+		"webmaster/safeExt@_please do not use it indiscriminately.": "请不要随意使用。",
+		"webmaster/safeExt@_Load your safe ID [ID]": "加载安全ID [ID]",
+		"webmaster/safeExt@_Load Key Variable [key]": "获取关键变量 [key]",
+		"webmaster/safeExt@_The function has not been created.": "功能未制作。",
 		"Lily/Video@_Video": "视频",
 		"Lily/Video@_load video from URL [URL] as [NAME]": "从URL[URL]加载视频为[NAME]",
 		"Lily/Video@_delete video [NAME]": "删除视频[NAME]",
@@ -4441,7 +4447,6 @@
 		"obviousAlexC/penPlus@_Red Tint": "红色",
 		"obviousAlexC/penPlus@_Green Tint": "绿色",
 		"obviousAlexC/penPlus@_Blue Tint": "蓝色",
-		"obviousAlexC/penPlus@_Transparency": "透明度",
 		"obviousAlexC/penPlus@_depth value": "深度值",
 		"obviousAlexC/penPlus@_U value": "U值",
 		"obviousAlexC/penPlus@_V value": "V值",
@@ -5762,7 +5767,6 @@
 		"box2d@_fixed (but can rotate)": "固定的(可以旋转)",
 		"box2d@_very light": "非常轻",
 		"box2d@_light": "轻",
-		"box2d@_normal": "普通",
 		"box2d@_heavy": "重",
 		"box2d@restitution.none": "没有弹性",
 		"box2d@_little": "有一点弹性",
