@@ -1315,6 +1315,10 @@
     "zh-cn": {
         "webmaster/safeExt@description": "使你的项目更安全，防止别人偷盗你的项目并不标注原著，还抹掉原作者在作品里的声明。",
         "webmaster/safeExt@name": "安全扩展",
+        "webmaster/AdvancedPlayback@description": "高级音频播放功能，更偏向于合成器。",
+        "webmaster/AdvancedPlayback@name": "高级音频播放",
+        "ABCD/AdvancedFileOperations@description": "一些更高级的文件操作。",
+        "ABCD/AdvancedFileOperations@name": "高级文件操作",
         "-SIPC-/consoles@description": "与内置于浏览器开发工具中的 JavaScript 控制台交互的积木。",
         "-SIPC-/consoles@name": "控制台",
         "-SIPC-/time@description": "关于时间、日期和时区的积木。",

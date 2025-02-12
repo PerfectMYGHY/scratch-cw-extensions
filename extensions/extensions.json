@@ -1,6 +1,8 @@
 [
   // This file supports comments
+  "webmaster/AdvancedPlayback",
   "webmaster/safeExt",
+  "ABCD/AdvancedFileOperations",
   "lab/text",
   "stretch",
   "gamepad",

@@ -1,6 +1,7 @@
 // Name: 安全扩展
 // ID: safeExt
 // Description: 使你的项目更安全，防止别人偷盗你的项目并不标注原著，还抹掉原作者在作品里的声明。
+// Original: webmaster <https://www.scratch-cw.top/users/webmaster/>
 
 (function (Scratch) {
     "use strict";
