@@ -2,6 +2,7 @@
   // This file supports comments
   "webmaster/AdvancedPlayback",
   "webmaster/safeExt",
+  "ABCD/URLProcessor",
   "ABCD/AdvancedFileOperations",
   "lab/text",
   "stretch",
