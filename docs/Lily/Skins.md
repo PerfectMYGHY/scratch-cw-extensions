@@ -1,109 +1,109 @@
 # Skins
 
-This extension allows you to load and display images onto sprites, as Skins.
+这个扩展允许你将图像加载并显示到精灵上，作为造型。
 
-In this extension, a "Skin" is an image that can replace what a sprite looks like. 
+在这个扩展中，“造型”是可以替换精灵外观的图像。
 
-Unlike costumes, Skins are not loaded when the project is opened. Instead, Skins are loaded with blocks as the project is running.
+与服装不同，造型不会在项目打开时加载。相反，造型是在项目运行时通过积木加载的。
 
-## Loading Skins
+## 加载造型
 
-Skins can be created in 3 different ways. Each way requires you to give the skin a name, which will be used by other blocks to reference the skin later.
+造型可以通过三种不同的方式创建。每种方式都需要为造型命名，之后其他积木将通过该名称引用这个造型。
 
-Loading a skin with the same name as another skin will overwrite the data of that skin. Any sprite that was using this skin will now show the new skin.
-
----
-
-```scratch
-create SVG skin [<svg />] as [my skin] :: #6b56ff
-```
-The first way is by creating a new skin with SVG markup data. The advantage to this is that it loads much quicker than the other loading blocks. The obvious disadvantage is that, unlike the other 2 blocks, it can only work with SVGs.
+加载具有相同名称的造型将覆盖该造型的数据。任何使用此造型的精灵现在将显示新的造型。
 
 ---
 
 ```scratch
-load skin from (costume 1 v) as [my skin] :: #6b56ff
+创建SVG造型 [<svg />] 为 [my skin] :: #6b56ff
 ```
-The second way is by loading a skin from a costume.
-
-It's important to note that this block will require the Advanced Option "Remove raw asset data after loading to save RAM" to be disabled in the packager in order for this block to work correctly in a packaged environment. **You do not need to do this within the editor.**
-
-If you intend to package your project, we don't encourage using this block for that reason. **None of the other blocks in this extension require this option to be disabled.**
+第一种方式是通过SVG标记数据创建一个新的造型。这种方式的优点是加载速度比其他方式快。显而易见的缺点是，与其他两种积木不同，它只能用于SVG。
 
 ---
 
 ```scratch
-load skin from URL [https://...] as [my skin] :: #6b56ff
+从 (造型 1 v) 加载造型并命名为 [my skin] :: #6b56ff
 ```
-The final way is loading a skin through a URL. This block allows you to load any bitmap image as well as SVGs.
+第二种方式是从服装中加载造型。
 
-```scratch
-load skin from URL (snapshot stage :: #9966ff) as [my skin] :: #6b56ff
-```
-While this block can work with a website URL, it's primarily designed to work with data URIs. Try using this with the "snapshot stage" block from the "Looks Plus" extension.
+需要注意的是，为了让这个积木在打包环境中正常工作，需要在打包器中禁用高级选项“加载后移除原始资产数据以节省RAM”。**你不需要在编辑器中执行此操作。**
 
-For the final 2 blocks, the block will pause the script for a moment in order to load the skin. Treat them like "wait" blocks in your scripts, don't expect them to finish instantaneously.
-
-## Using Skins
-
-```scratch
-set skin of (myself v) to [my skin] :: #6b56ff
-```
-Skins can be applied to a sprite with this block, so long as you loaded the skin beforehand. Skins can be applied to multiple sprites/clones.
-
-Using the "myself" option will apply the skin to the sprite the block is running in: if the block is running in a clone, it will apply the skin to the clone. **Do not confuse "myself" with the sprite's name.**
-
-Skins will automatically be removed from every sprite when the project has stopped.
+如果你打算打包项目，由于这个原因，我们不建议使用这个积木。**这个扩展中的其他积木都不需要禁用该选项。**
 
 ---
 
 ```scratch
-restore skin of (myself v) :: #6b56ff
+从URL [https://...] 加载造型并命名为 [my skin] :: #6b56ff
 ```
-You can remove the skin of a sprite with the "restore skin" block. This will remove the skin from that specific sprite.
+最后一种方式是通过URL加载造型。这个积木允许你加载任何位图图像以及SVG。
+
+```scratch
+从URL (舞台快照 :: #9966ff) 加载造型并命名为 [my skin] :: #6b56ff
+```
+虽然这个积木可以使用网站URL，但它主要是为了与数据URI一起使用。试着与“Looks Plus”扩展中的“舞台快照”积木一起使用。
+
+对于最后两个积木，这个积木会暂停脚本片刻以加载造型。在你的脚本中将它们视为“等待”积木，不要指望它们立即完成。
+
+## 使用造型
+
+```scratch
+将 (自己 v) 的造型设置为 [my skin] :: #6b56ff
+```
+只要你事先加载了造型，就可以用这个积木将造型应用到精灵上。造型可以应用到多个精灵/克隆体上。
+
+使用“自己”选项将造型应用到积木运行的精灵上：如果积木在克隆体中运行，它将造型应用到克隆体上。**不要将“自己”与精灵的名字混淆。**
+
+当项目停止时，造型将自动从所有精灵上移除。
 
 ---
 
 ```scratch
-restore targets with skin [my skin] :: #6b56ff
+恢复 (自己 v) 的造型 :: #6b56ff
 ```
-You can remove a skin from every sprite that has it applied with the "restore targets with skin" block. "Target" refers to "sprite" in this context.
-
-## Deleting Skins
-
-Skins that have been loaded will still exist after the project has stopped. In order to truly delete a skin, you have 2 methods.
+你可以使用“恢复 造型”积木移除精灵的造型。这将从特定的精灵上移除造型。
 
 ---
 
 ```scratch
-delete skin [my skin] :: #6b56ff
+用造型恢复目标 [my skin] :: #6b56ff
 ```
-Delete a specified skin, and reset any sprite that had it applied.
+你可以使用“恢复应用了造型的目标”积木从所有应用了造型的精灵上移除造型。在此上下文中，“目标”指的是“精灵”。
+
+## 删除造型
+
+即使项目停止后，加载的造型仍然存在。为了真正删除一个造型，有两种方法。
 
 ---
 
 ```scratch
-delete all skins :: #6b56ff
+删除造型 [my skin] :: #6b56ff
 ```
-Delete every skin that has been loaded and reset all sprites that had any skin applied.
-
-## Other Blocks
-
-```scratch
-<skin [my skin] is loaded? :: #6b56ff>
-```
-Check whether a skin is actually loaded. This becomes true **after** the block has finished loading the skin.
+删除指定的造型，并重置任何应用了该造型的精灵。
 
 ---
 
 ```scratch
-((width v) of [my skin] :: #6b56ff)
+删除所有造型 :: #6b56ff
 ```
-Get the width/height of a skin. The values are rounded.
+删除所有已加载的造型，并重置所有应用了任何造型的精灵。
+
+## 其他积木
+
+```scratch
+< 造型 [my skin] 已加载? :: #6b56ff>
+```
+检查造型是否真正加载。在积木加载完造型之后，这个值会变为true。
 
 ---
 
 ```scratch
-(current skin of (myself v) :: #6b56ff)
+( 造型 [my skin] 的 (width v) :: #6b56ff)
 ```
-The name of the skin that is applied to the specified sprite.
+获取造型的宽度/高度。值是四舍五入的。
+
+---
+
+```scratch
+((自己 v) 的当前造型 :: #6b56ff)
+```
+应用到指定精灵的造型的名称。

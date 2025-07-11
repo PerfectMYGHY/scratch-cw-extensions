@@ -64,6 +64,7 @@ const parsePerson = (person) => {
 const parseMetadata = (extensionCode) => {
   const metadata = new Extension();
 
+    var i = 0;
   for (const line of extensionCode.split("\n")) {
     if (!line.startsWith("//")) {
       // End of header.
@@ -106,6 +107,7 @@ const parseMetadata = (extensionCode) => {
         // TODO
         break;
     }
+      i++;
   }
 
   return metadata;

@@ -48,7 +48,7 @@ const defaultIdForString = (string) => {
  */
 const parseTranslations = (js) => {
   const metadata = parseMetadata(js);
-  if (!metadata.name) {
+    if (!metadata.name) {
     throw new Error(`Extension needs a // Name: to generate translations`);
   }
 
