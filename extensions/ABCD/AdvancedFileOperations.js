@@ -5,6 +5,8 @@
 // Original: ABCD <https://www.scratch-cw.top/users/ABCD/>
 
 (function (Scratch) {
+    "use strict";
+
     class AdvancedFileOperations {
         constructor(runtime) {
           this.fileInput = document.createElement('input');

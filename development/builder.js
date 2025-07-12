@@ -703,7 +703,7 @@ class Builder {
 
     const featuredExtensionSlugs = ExtendedJSON.parse(
       fs.readFileSync(
-        pathUtil.join(this.extensionsRoot, "extensions.json"),
+        pathUtil.join(this.extensionsRoot, "extensions.json5"),
         "utf-8"
       )
     );

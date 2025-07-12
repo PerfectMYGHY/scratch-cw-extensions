@@ -1,4 +1,4 @@
-# npm
+ï»¿# npm
 node_modules
 
 # Final built website and localizations
@@ -17,5 +17,8 @@ thumbs.db
 
 # Tip: .git/info/exclude is your personal gitignore for things that don't belong here
 
-# ÓĞµÀ·­ÒëÃÜ³×
+# æœ‰é“ç¿»è¯‘å¯†åŒ™
 env.json
+
+# ä¸´æ—¶ç›®å½•
+/samples/temp

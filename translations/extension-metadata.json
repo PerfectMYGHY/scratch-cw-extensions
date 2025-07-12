@@ -1317,6 +1317,8 @@
         "webmaster/safeExt@name": "安全扩展",
         "webmaster/AdvancedPlayback@description": "高级音频播放功能，更偏向于合成器。",
         "webmaster/AdvancedPlayback@name": "高级音频播放",
+        "ABCD/URLProcessor@description": "一些URL处理操作。",
+        "ABCD/URLProcessor@name": "URL处理操作",
         "ABCD/AdvancedFileOperations@description": "一些更高级的文件操作。",
         "ABCD/AdvancedFileOperations@name": "高级文件操作",
         "-SIPC-/consoles@description": "与内置于浏览器开发工具中的 JavaScript 控制台交互的积木。",
