@@ -16,6 +16,7 @@ desktop.ini
 *.sublime-workspace
 .vscode/*
 !.vscode/*.code-snippets
+.vs/*
 
 # Tip: .git/info/exclude is your personal gitignore for things that don't belong here
 
