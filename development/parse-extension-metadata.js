@@ -26,6 +26,7 @@ class Extension {
     /** @type {Person[]} */
     this.original = [];
     this.context = "";
+    this.scratchCompatible = false;
   }
 }
 
@@ -64,7 +65,6 @@ const parsePerson = (person) => {
 const parseMetadata = (extensionCode) => {
   const metadata = new Extension();
 
-    var i = 0;
   for (const line of extensionCode.split("\n")) {
     if (!line.startsWith("//")) {
       // End of header.
@@ -103,14 +103,16 @@ const parseMetadata = (extensionCode) => {
       case "context":
         metadata.context = value;
         break;
+      case "scratch-compatible":
+        metadata.scratchCompatible = value === "true";
+        break;
       default:
         // TODO
         break;
     }
-      i++;
   }
 
   return metadata;
 };
 
-module.exports = parseMetadata;
+export default parseMetadata;

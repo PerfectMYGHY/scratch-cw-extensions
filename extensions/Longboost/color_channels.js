@@ -1,6 +1,7 @@
 // Name: RGB Channels
 // ID: lbdrawtest
 // Description: Only render or stamp certain RGB channels.
+// By: Longboost
 // License: MIT
 
 (function (Scratch) {
@@ -54,18 +55,18 @@
           {
             opcode: "drawSelected",
             blockType: Scratch.BlockType.COMMAND,
-            text: Scratch.translate("set colors red:[R]green:[G]blue:[B]"),
+            text: Scratch.translate("set colors red:[R] green:[G] blue:[B]"),
             arguments: {
               R: {
-                type: Scratch.ArgumentType.MENU,
+                type: Scratch.ArgumentType.STRING,
                 menu: "ENABLED_MENU",
               },
               G: {
-                type: Scratch.ArgumentType.MENU,
+                type: Scratch.ArgumentType.STRING,
                 menu: "ENABLED_MENU",
               },
               B: {
-                type: Scratch.ArgumentType.MENU,
+                type: Scratch.ArgumentType.STRING,
                 menu: "ENABLED_MENU",
               },
             },
@@ -73,7 +74,7 @@
           {
             opcode: "draw",
             blockType: Scratch.BlockType.COMMAND,
-            text: Scratch.translate("only draw colors:[R]green:[G]blue:[B]"),
+            text: Scratch.translate("only draw colors:[R] green:[G] blue:[B]"),
             hideFromPalette: true,
             arguments: {
               R: {
@@ -101,7 +102,7 @@
           {
             opcode: "drawDepth",
             blockType: Scratch.BlockType.COMMAND,
-            text: Scratch.translate("enable depth mask?[DRAW]"),
+            text: Scratch.translate("enable depth mask? [DRAW]"),
             hideFromPalette: true,
             arguments: {
               DRAW: {
@@ -118,7 +119,20 @@
         menus: {
           COLOR_MENU: {
             acceptReporters: true,
-            items: ["red", "green", "blue"],
+            items: [
+              {
+                text: Scratch.translate("red"),
+                value: "red",
+              },
+              {
+                text: Scratch.translate("green"),
+                value: "green",
+              },
+              {
+                text: Scratch.translate("blue"),
+                value: "blue",
+              },
+            ],
           },
           ENABLED_MENU: {
             acceptReporters: true,

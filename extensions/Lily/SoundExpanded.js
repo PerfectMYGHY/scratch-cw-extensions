@@ -34,7 +34,9 @@
           {
             opcode: "startLoopingBegin",
             blockType: Scratch.BlockType.COMMAND,
-            text: Scratch.translate("start looping [SOUND] loop start [START] seconds"),
+            text: Scratch.translate(
+              "start looping [SOUND] loop start [START] seconds"
+            ),
             arguments: {
               SOUND: {
                 type: Scratch.ArgumentType.SOUND,
@@ -49,7 +51,9 @@
           {
             opcode: "startLoopingBeginEnd",
             blockType: Scratch.BlockType.COMMAND,
-            text: Scratch.translate("start looping [SOUND] loop region [START] to [END] seconds"),
+            text: Scratch.translate(
+              "start looping [SOUND] loop region [START] to [END] seconds"
+            ),
             arguments: {
               SOUND: {
                 type: Scratch.ArgumentType.SOUND,
@@ -93,7 +97,9 @@
           {
             opcode: "playSoundAtAndWait",
             blockType: Scratch.BlockType.COMMAND,
-            text: Scratch.translate("play sound [SOUND] from [START] seconds until done"),
+            text: Scratch.translate(
+              "play sound [SOUND] from [START] seconds until done"
+            ),
             arguments: {
               SOUND: {
                 type: Scratch.ArgumentType.SOUND,
@@ -123,7 +129,9 @@
           {
             opcode: "playSoundToAndWait",
             blockType: Scratch.BlockType.COMMAND,
-            text: Scratch.translate("play sound [SOUND] from [START] to [END] seconds until done"),
+            text: Scratch.translate(
+              "play sound [SOUND] from [START] to [END] seconds until done"
+            ),
             arguments: {
               SOUND: {
                 type: Scratch.ArgumentType.SOUND,
@@ -142,7 +150,9 @@
           {
             opcode: "playSoundTo",
             blockType: Scratch.BlockType.COMMAND,
-            text: Scratch.translate("start sound [SOUND] from [START] to [END] seconds"),
+            text: Scratch.translate(
+              "start sound [SOUND] from [START] to [END] seconds"
+            ),
             arguments: {
               SOUND: {
                 type: Scratch.ArgumentType.SOUND,
@@ -173,22 +183,12 @@
             opcode: "pauseSounds",
             blockType: Scratch.BlockType.COMMAND,
             text: Scratch.translate("pause all sounds"),
-            arguments: {
-              SOUND: {
-                type: Scratch.ArgumentType.SOUND,
-              },
-            },
             extensions: ["colours_sounds"],
           },
           {
             opcode: "resumeSounds",
             blockType: Scratch.BlockType.COMMAND,
             text: Scratch.translate("resume all sounds"),
-            arguments: {
-              SOUND: {
-                type: Scratch.ArgumentType.SOUND,
-              },
-            },
             extensions: ["colours_sounds"],
           },
 
@@ -223,7 +223,7 @@
           {
             opcode: "getSoundEffect",
             blockType: Scratch.BlockType.REPORTER,
-            text: Scratch.translate("[EFFECT] of [TARGET]"),
+            text: Scratch.translate("effect [EFFECT] of [TARGET]"),
             arguments: {
               EFFECT: {
                 type: Scratch.ArgumentType.STRING,
@@ -272,17 +272,35 @@
           attribute: {
             acceptReporters: false,
             items: [
-              {text:Scratch.translate("length"),value:"length"},
-              {text:Scratch.translate("channels"),value:"channels"},
-              {text:Scratch.translate("sample rate"),value:"sample rate"},
-              {text:Scratch.translate("dataURI"),value:"dataURI"},
+              {
+                text: Scratch.translate("length"),
+                value: "length",
+              },
+              {
+                text: Scratch.translate("channels"),
+                value: "channels",
+              },
+              {
+                text: Scratch.translate("sample rate"),
+                value: "sample rate",
+              },
+              {
+                text: Scratch.translate("dataURI"),
+                value: "dataURI",
+              },
             ],
           },
           effect: {
             acceptReporters: false,
             items: [
-              {text:Scratch.translate("pitch"),value:"pitch"},
-              {text:Scratch.translate("pan"),value:"pan"},
+              {
+                text: Scratch.translate("pitch"),
+                value: "pitch",
+              },
+              {
+                text: Scratch.translate("pan"),
+                value: "pan",
+              },
             ],
           },
           targets: {
@@ -295,7 +313,8 @@
 
     _startLooping(util, sound, loopStart, loopEnd) {
       const index = this._getSoundIndex(sound, util);
-      if (index < 0) return 0;
+      if (index < 0) return;
+
       const target = util.target;
       const sprite = util.target.sprite;
 
@@ -308,9 +327,12 @@
       }
 
       if (!soundPlayer.outputNode) return;
+
       soundPlayer.outputNode.loop = true;
       soundPlayer.outputNode.loopStart = loopStart;
-      soundPlayer.outputNode.loopEnd = loopEnd;
+      // If loopEnd is the default of 0, then loopStart is ignored
+      soundPlayer.outputNode.loopEnd =
+        loopEnd || soundPlayer.outputNode.buffer.duration;
     }
 
     startLooping(args, util) {
@@ -537,7 +559,7 @@
     }
 
     setProjectVolume(args) {
-      const value = Scratch.Cast.toNumber(args.VALUE);
+      const value = Scratch.Cast.toNumber(args.VALUE) / 100;
       const newVolume = Scratch.Cast.toNumber(Math.max(Math.min(value, 1), 0));
       runtime.audioEngine.inputNode.gain.value = newVolume;
     }
@@ -591,8 +613,8 @@
 
     _getTargets() {
       let spriteNames = [
-        { text: Scratch.translate("myself"), value: "_myself_" },
-        { text: Scratch.translate("Stage"), value: "_stage_" },
+        { text: "myself", value: "_myself_" },
+        { text: "Stage", value: "_stage_" },
       ];
       const targets = Scratch.vm.runtime.targets
         .filter((target) => target.isOriginal && !target.isStage)

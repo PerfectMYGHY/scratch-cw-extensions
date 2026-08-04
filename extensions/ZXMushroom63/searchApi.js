@@ -33,7 +33,7 @@
           {
             opcode: "occurencesofsearchparam",
             blockType: Scratch.BlockType.REPORTER,
-            text: Scratch.translate("occurences of search parameter [ID]"),
+            text: Scratch.translate("occurrences of search parameter [ID]"),
             arguments: {
               ID: {
                 type: Scratch.ArgumentType.STRING,
@@ -85,7 +85,9 @@
           {
             opcode: "appendsearchparam",
             blockType: Scratch.BlockType.COMMAND,
-            text: Scratch.translate("append search parameter [ID] with value [VAL]"),
+            text: Scratch.translate(
+              "append search parameter [ID] with value [VAL]"
+            ),
             arguments: {
               ID: {
                 type: Scratch.ArgumentType.STRING,
@@ -100,7 +102,7 @@
           {
             opcode: "hassearchparam",
             blockType: Scratch.BlockType.BOOLEAN,
-            text: Scratch.translate("has search parameter [ID]"),
+            text: Scratch.translate("has search parameter [ID]?"),
             arguments: {
               ID: {
                 type: Scratch.ArgumentType.STRING,
@@ -132,7 +134,10 @@
         menus: {
           PARAM: {
             acceptReporters: true,
-            items: ["value", "name"],
+            items: [
+              { text: Scratch.translate("value"), value: "value" },
+              { text: Scratch.translate("name"), value: "name" },
+            ],
           },
         },
       };

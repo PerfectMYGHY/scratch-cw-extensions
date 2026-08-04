@@ -1,11 +1,11 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="utf8">
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>TurboWarp扩展库</title>
+    <title>TurboWarp Extension Gallery</title>
     <meta name="theme-color" content="#ff4c4c">
-    <meta name="description" content="官方网站为TurboWarp寻找强大的无盒扩展。">
+    <meta name="description" content="The official place to find powerful unsandboxed extensions for TurboWarp.">
     <style>
       :root {
         font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -158,14 +158,15 @@
         backdrop-filter: blur(0.6px);
       }
       .extension-buttons > * {
-        padding: 0.5rem;
         background-color: #4c97ff;
+        padding: 0.5rem;
         border-radius: 0.5rem;
         border: none;
         font: inherit;
         cursor: pointer;
         color: white;
         text-decoration: none;
+        text-shadow: 0 0 4px #0003;
         pointer-events: auto;
         transition: filter 0.15s;
         filter: drop-shadow(0px 1px 3px #00000075);
@@ -185,11 +186,11 @@
         color: white;
       }
       .extension-buttons .docs {
-        background-color: #FFAB19;
+        background-color: #f69925;
         color: white;
       }
       .extension-buttons .sample {
-        background-color: #40BF4A;
+        background-color: #3ebb48;
         color: white;
       }
       .extension-buttons :disabled {
@@ -235,6 +236,65 @@
       footer p {
         margin: 0 0 8px 0;
       }
+
+      .search-container {
+        display: flex;
+        justify-content: space-evenly;
+      }
+      
+      .column {
+        display: flex;
+        flex-direction: column;
+      }
+
+      .search-base {
+        display: flex;
+        padding: 8px;
+        font-size: 1rem;
+        font-weight: 400;
+        line-height: 1.5;
+        background-color: transparent;
+        background-clip: padding-box;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+        border-top: 2px solid #ff4c4c;
+        border-bottom: 2px solid #ff4c4c;
+        transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+        transition: box-shadow .15s ease-in-out, box-shadow .15s ease-in-out;
+      }
+
+      @media (prefers-color-scheme: dark) {
+        .search-base {
+          background-color: #111;
+        }
+      }
+
+      .search-base:focus {
+        outline: none;
+        box-shadow: 0 0 0 .25rem rgba(236, 90, 84, .25);
+        transition: box-shadow .15s ease-in-out, box-shadow .15s ease-in-out;
+      }
+
+      .search-bar {
+        border-right: 1px solid #ff4c4c;
+        border-top-left-radius: 8px;
+        border-bottom-left-radius: 8px;
+        border-left: 2px solid #ff4c4c;
+        width: 75%;
+        max-width: 928px;
+      }
+
+      .search-sort {
+        border-left: 1px solid #ff4c4c;
+        border-radius: 0px;
+        border-top-right-radius: 8px;
+        border-bottom-right-radius: 8px;
+        border-right: 2px solid #ff4c4c;
+        width: 25%;
+        display: flex;
+      }
+
     </style>
   </head>
 
@@ -255,33 +315,31 @@
            <path d="m108.34581 25.3789q-1.19093 5.210345-1.7864 11.313892-0.14887 1.637537 0.29773 4.168276 0.4466 2.97734 0.4466 4.168276 0 3.870542-5.06147 3.870542-3.275078 0-4.317148-1.935271-0.14887-3.275074 0.14887-8.93202 0.29773-6.699015 0.29773-8.93202-0.14886 0-0.4466-0.297734-13.84463 0.595468-26.05172 1.786404-0.29774 1.935271 0 4.763744l0.59546 5.359212q-0.59546 4.614877-0.59546 13.695765 0.4466 3.870542 0.4466 33.197344v10.86729q0 2.53074 0.74433 3.57281h9.22976q5.65694-0.74434 5.65694 4.76374 0 3.27508-3.1262 4.61488-1.93528 0.74434-6.84789 0.29774-2.97734-0.29774-6.99675-0.14887-5.50808 0.74433-13.39803 1.19093-8.03881 0.44661-9.825218-2.233-1.190936-1.7864 0-3.72168 2.084138-3.27507 10.867288-3.27507 4.61488 0 4.61488-2.53074 0-1.3398-0.14887-2.53074 0-3.72168 0.14887-6.55015 0.4466-8.03882 0-22.627784-0.59547-21.139115 0.4466-37.961086l-0.4466-0.446601q-4.61488 0.297734-17.268572-0.148867-0.595468 0-9.080887 0.595468 2.084138 14.291232 2.381872 20.394779 0 0-0.297734 4.01941-0.148867 2.233005-3.721676 2.233005-2.828473 0-4.763744-10.718425-0.893202-6.401281-1.786404-12.951429 0-1.042069-1.042069-3.572808-0.893202-2.679606-0.893202-4.019409 0-3.721675 5.656946-4.614877 0.446601 0 1.48867 0.148867t1.48867 0.148867h15.48217q21.43685 0 21.43685 0 13.69576-0.595468 26.49832-2.381872 0.89321-0.446601 2.679608-0.893202 3.12621-0.297735 5.35921 1.48867 2.23301 1.637537 1.48867 4.763744z" fill="#fff"/>
           </g>
         </svg>
-        <div>TurboWarp扩展库</div>
+        <div>TurboWarp Extension Gallery</div>
       </h1>
 
-      <p>与其他网站上的自定义扩展不同，这些扩展不受扩展沙盒的限制，因此它们的功能要强大得多。所有扩展都经过安全审查。</p>
-      <p>
-        要在TurboWarp中使用多个这些扩展，请将鼠标悬停在扩展上并按按钮复制其URL。然后转到编辑器，打开扩展选择页面，然后选择底部的“自定义扩展”选项，并输入URL。
-      </p>
+      <p>This is the official extension gallery, where you can get extensions that aren't limited by the extension sandbox. All of the extensions here are reviewed for safety.</p>
+      <p>You can also find these extensions in TurboWarp's "Add Extension" menu.</p>
 
       <div class="infobox infobox-warning">
-          <div class="infobox-title">这些扩展与正版Scratch不兼容。</div>
-          使用这些扩展的项目无法上传到其他使用正版Scratch的网站。
-          但是，它们可以用于<a href="https://packager.turbowarp.org/">TurboWarp打包器</a>。
+        <div class="infobox-title">These extensions are not compatible with Scratch.</div>
+        Projects that use these extensions can't be opened in Scratch or uploaded to the Scratch website.
+        They can still be used in <a href="https://packager.turbowarp.org/">the TurboWarp packager</a>.
       </div>
 
       <div class="infobox">
-          <div class="infobox-title">某些扩展可能无法在TurboWarp Desktop中工作。</div>
-          为了兼容性、安全性和离线支持，每个<a href="https://desktop.turbowarp.org/">TurboWarp Desktop</a>更新包含这些扩展自发布之日起的离线副本，因此某些扩展可能已过时或丢失。
-          使用最新更新以获得最佳结果。
+        <div class="infobox-title">Some extensions may not work in TurboWarp Desktop.</div>
+        To make sure extensions work offline, each release of <a href="https://desktop.turbowarp.org/">TurboWarp Desktop</a> comes with a copy of these extensions as of its release date, so some extensions may be outdated or missing.
+        Update to the latest version for the best results.
       </div>
     </div>
 
     <% if (mode === "development") { %>
       <div class="section">
         <div class="development-tools">
-          <h2>开发服务器工具</h2>
+          <h2>Development Server Tools</h2>
           <p>
-            最近修改的扩展名：
+            Most recently modified extensions:
             <% for (const extensionSlug of mostRecentExtensions) { %>
               <a href="<%= getRunExtensionURL(extensionSlug) %>"><%= extensionSlug %>.js</a>
             <% } %>
@@ -320,9 +378,74 @@
           extension.dataset.samplesOpen = extension.dataset.samplesOpen !== 'true';
         }
       });
+
+      window.addEventListener("load", () => {
+        const extensionElements = document.querySelectorAll(".extension");
+        const container = document.querySelector(".extensions");
+        const sort = document.getElementById("search-sort");
+
+        document.getElementById("search-bar").addEventListener("input", function (evt) {
+          const searchQuery = evt.srcElement.value.toLowerCase();
+
+          extensionElements.forEach(extension => {
+            const h2 = extension.querySelector("h2").textContent.toLowerCase();
+            const p = extension.querySelector("p").textContent.toLowerCase();
+            if (h2.includes(searchQuery) || p.includes(searchQuery)) {
+              extension.style.removeProperty("display");
+            } else {
+              extension.style.display = "none";
+            }
+          });
+
+          switch (sort.value) {
+            case "original":
+              originalOrder.forEach(div => container.appendChild(div));
+              break;
+            case "abc":
+              divs.sort((a, b) => a.textContent.localeCompare(b.textContent));
+              divs.forEach(div => container.appendChild(div));
+              break;
+            case "zxy":
+              divs.sort((a, b) => b.textContent.localeCompare(a.textContent));
+              divs.forEach(div => container.appendChild(div));
+              break;
+          }
+        });
+
+        const divs = Array.from(extensionElements);
+        const originalOrder = [...divs];
+
+        sort.addEventListener("change", function (evt) {
+          switch (evt.srcElement.value) {
+            case "original":
+              originalOrder.forEach(div => container.appendChild(div));
+              break;
+            case "abc":
+              divs.sort((a, b) => a.innerText.localeCompare(b.innerText));
+              divs.forEach(div => container.appendChild(div));
+              break;
+            case "zxy":
+              divs.sort((a, b) => b.innerText.localeCompare(a.innerText));
+              divs.forEach(div => container.appendChild(div));
+              break;
+          }
+        });
+      });
+
     </script>
 
     <div class="section extensions-outer">
+      <div class="search-container">
+        <input type="text" id="search-bar" class="search-base search-bar" placeholder="Search for extensions...">
+        <select class="search-base search-sort" id="search-sort">
+          <option value="original">Sort: Default</option>
+          <!--<option value="option2">Sort: Relevance</option>-->
+          <option value="abc">Sort: ABC</option>
+          <option value="zxy">Sort: ZXY</option>
+          <!--<option value="newest">Sort: Newest</option>
+          <option value="oldest">Sort: Oldest</option>-->
+        </select>
+      </div>
       <div class="extensions">
         <%
         const peopleToHTML = (people) => {
@@ -350,24 +473,24 @@
               <img loading="lazy" src="<%= image %>" class="extension-image">
 
               <div class="extension-buttons">
-                <button class="copy" data-copy="<%= getFullExtensionURL(extensionSlug) %>">复制URL</button>
-                <a class="open" href="<%= getRunExtensionURL(extensionSlug) %>">打开扩展</a>
+                <button class="copy" data-copy="<%= getFullExtensionURL(extensionSlug) %>">Copy URL</button>
+                <a class="open" href="<%= getRunExtensionURL(extensionSlug) %>">Open Extension</a>
 
                 <% if (metadata.hasDocumentation) { %>
-                  <a class="docs" href="<%= getDocumentationURL(extensionSlug) %>">文档</a>
+                  <a class="docs" href="<%= getDocumentationURL(extensionSlug) %>">Documentation</a>
                 <% } %>
 
                 <% if (metadata.samples.length === 1) { %>
-                  <a class="sample" href="<%= getRunSampleURL(metadata.samples[0]) %>">示例项目</a>
+                  <a class="sample" href="<%= getRunSampleURL(metadata.samples[0]) %>">Sample Project</a>
                 <% } else if (metadata.samples.length > 1) { %>
-                  <button class="sample sample-list-button">示例项目</button>
+                  <button class="sample sample-list-button">Sample Projects</button>
                 <% } %>
               </div>
             </div>
 
             <% if (metadata.samples.length > 1) { %>
               <div class="sample-list">
-                <h3><%= metadata.name %> 示例项目:</h3>
+                <h3><%= metadata.name %> Sample Projects:</h3>
                 <% for (const sample of metadata.samples) { %>
                   <a class="sample-list-item" href="<%= getRunSampleURL(sample)%>"><%= sample.getTitle() %></a>
                 <% } %>
@@ -377,8 +500,15 @@
             <h2><%= metadata.name %></h2>
             <p>
               <%= metadata.description %>
-              <%- metadata.by.length ? `${peopleToHTML(metadata.by)}制作` : '' %>
-              <%- metadata.original.length ? `最初由${peopleToHTML(metadata.original)}制作` : '' %>
+              <%-
+                (metadata.original.length && metadata.by.length) ? (
+                  `Created by ${peopleToHTML(metadata.original)}. Updated by ${peopleToHTML(metadata.by)}.`
+                ) : metadata.by.length ? (
+                  `Created by ${peopleToHTML(metadata.by)}.`
+                ) : metadata.original.length ? (
+                  `Created by ${peopleToHTML(metadata.original)}.`
+                ) : ''
+              %>
             </p>
           </div>
         <% } %>
@@ -386,13 +516,13 @@
     </div>
 
     <footer class="section">
-      <p>TurboWarp不隶属于Scratch、Scratch团队或Scratch基金会。</p>
+      <p>TurboWarp is not affiliated with Scratch, the Scratch Team, or the Scratch Foundation.</p>
       <div class="links">
-        <a href="https://github.com/TurboWarp/extensions/tree/master/images#readme">图像归因</a>
+        <a href="https://github.com/TurboWarp/extensions/tree/master/images#readme">Image Attribution</a>
         -
         <a href="https://github.com/TurboWarp/extensions">GitHub</a>
         -
-        <a href="https://docs.turbowarp.org/development/extensions/introduction">开发者文档</a>
+        <a href="https://docs.turbowarp.org/development/extensions/introduction">Developer Documentation</a>
       </div>
     </footer>
   </body>

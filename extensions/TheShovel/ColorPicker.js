@@ -38,7 +38,7 @@
     getInfo() {
       return {
         id: "shovelColorPicker",
-        name: Scratch.translate("ColorPicker"),
+        name: Scratch.translate("Color Picker"),
         color1: "#ff7db5",
         color2: "#e0649a",
         color3: "#c14d7f",
@@ -106,7 +106,18 @@
         menus: {
           RGBMenu: {
             acceptReporters: true,
-            items: ["hex", "red", "green", "blue"],
+            items: [
+              {
+                text: Scratch.translate({
+                  default: "hex",
+                  description: "Referring to a hex color code like #ff4c4c",
+                }),
+                value: "hex",
+              },
+              { text: Scratch.translate("red"), value: "red" },
+              { text: Scratch.translate("green"), value: "green" },
+              { text: Scratch.translate("blue"), value: "blue" },
+            ],
           },
           POSMenu: {
             acceptReporters: true,

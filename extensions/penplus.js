@@ -1,8 +1,8 @@
 // Name: Pen Plus V5 (Old)
 // ID: betterpen
-// Description: Replaced by Pen Plus V6.
+// Description: Replaced by Pen Plus V7.
 // By: ObviousAlexC <https://scratch.mit.edu/users/pinksheep2917/>
-// License: MIT
+// License: MIT AND BSD-3-Clause
 
 /* eslint-disable no-empty-pattern */
 /* eslint-disable no-prototype-builtins */
@@ -1779,7 +1779,7 @@ Other various small fixes
         return;
       }
       // Permission is checked earlier.
-      // eslint-disable-next-line no-restricted-syntax
+      // eslint-disable-next-line extension/check-can-fetch
       const image = new Image();
       image.onload = function () {
         textureInfo.width = image.width;
@@ -2021,7 +2021,7 @@ Other various small fixes
         blockIconURI: SpriteIcon,
         opcode: "precachetextures",
         blockType: Scratch.BlockType.COMMAND,
-        text: Scratch.translate("Start loading image from url: [uri] clamp the texture? [clamp]"),
+        text: "Start loading image from url: [uri] clamp the texture? [clamp]",
         arguments: {
           uri: {
             type: Scratch.ArgumentType.STRING,
@@ -2037,13 +2037,9 @@ Other various small fixes
         blockIconURI: SpriteIcon,
         opcode: "getcostumedata",
         blockType: Scratch.BlockType.REPORTER,
-        text: Scratch.translate("Get data uri of costume[costu]"),
+        text: "Get data uri of costume[costu]",
         arguments: {
           costu: {
-            type: Scratch.ArgumentType.NUMBER,
-            defaultValue: "1",
-          },
-          spr: {
             type: Scratch.ArgumentType.NUMBER,
             defaultValue: "1",
           },
@@ -2053,14 +2049,14 @@ Other various small fixes
         blockIconURI: BlankIcon,
         opcode: "SolidColorRet",
         blockType: Scratch.BlockType.REPORTER,
-        text: Scratch.translate("Solid Color"),
+        text: "Solid Color",
         disableMonitor: true,
       },
       {
         blockIconURI: ColorIcon,
         opcode: "rgbtoSColor",
         blockType: Scratch.BlockType.REPORTER,
-        text: Scratch.translate("Convert R[R] G[G] B[B] to Hex"),
+        text: "Convert R[R] G[G] B[B] to Hex",
         arguments: {
           R: {
             type: Scratch.ArgumentType.NUMBER,
@@ -2080,7 +2076,7 @@ Other various small fixes
         blockIconURI: ColorIcon,
         opcode: "hsvtoSColor",
         blockType: Scratch.BlockType.REPORTER,
-        text: Scratch.translate("Convert Hue[H] Saturation[S] Value[V] to Hex"),
+        text: "Convert Hue[H] Saturation[S] Value[V] to Hex",
         arguments: {
           H: {
             type: Scratch.ArgumentType.NUMBER,
@@ -2100,7 +2096,7 @@ Other various small fixes
         blockIconURI: CoordsIcon,
         opcode: "setCoordSpace",
         blockType: Scratch.BlockType.COMMAND,
-        text: Scratch.translate("Set the coordinate space to [space]"),
+        text: "Set the coordinate space to [space]",
         arguments: {
           space: {
             type: Scratch.ArgumentType.STRING,
@@ -2112,7 +2108,7 @@ Other various small fixes
         blockIconURI: CoordsIcon,
         opcode: "coordBlock",
         blockType: Scratch.BlockType.REPORTER,
-        text: Scratch.translate("[c1][c2][c3][c4][c5][c6]"),
+        text: "[c1][c2][c3][c4][c5][c6]",
         arguments: {
           c1: {
             type: Scratch.ArgumentType.NUMBER,
@@ -2149,7 +2145,7 @@ Other various small fixes
       {
         opcode: "pendrawspritefromurl",
         blockType: Scratch.BlockType.COMMAND,
-        text: Scratch.translate("Stamp the image from url: [url] at x:[x] y:[y]"),
+        text: "Stamp the image from url: [url] at x:[x] y:[y]",
         arguments: {
           url: {
             type: Scratch.ArgumentType.STRING,
@@ -2168,7 +2164,7 @@ Other various small fixes
       {
         opcode: "rotateStamp",
         blockType: Scratch.BlockType.COMMAND,
-        text: Scratch.translate("Set stamp rotation to [ANGLE]"),
+        text: "Set stamp rotation to [ANGLE]",
         arguments: {
           ANGLE: {
             type: Scratch.ArgumentType.ANGLE,
@@ -2179,18 +2175,12 @@ Other various small fixes
       {
         opcode: "getstamprotation",
         blockType: Scratch.BlockType.REPORTER,
-        text: Scratch.translate("Stamp Rotation"),
-        arguments: {
-          ANGLE: {
-            type: Scratch.ArgumentType.ANGLE,
-            defaultValue: "90",
-          },
-        },
+        text: "Stamp Rotation",
       },
       {
         opcode: "setpenstrechandsquash",
         blockType: Scratch.BlockType.COMMAND,
-        text: Scratch.translate("Set stamp width to [width] and height to [height]"),
+        text: "Set stamp width to [width] and height to [height]",
         arguments: {
           width: {
             type: Scratch.ArgumentType.NUMBER,
@@ -2205,19 +2195,19 @@ Other various small fixes
       {
         opcode: "getstampwidth",
         blockType: Scratch.BlockType.REPORTER,
-        text: Scratch.translate("Stamp Width"),
+        text: "Stamp Width",
         arguments: {},
       },
       {
         opcode: "getstampheight",
         blockType: Scratch.BlockType.REPORTER,
-        text: Scratch.translate("Stamp Height"),
+        text: "Stamp Height",
         arguments: {},
       },
       {
         opcode: "setstampcolor",
         blockType: Scratch.BlockType.COMMAND,
-        text: Scratch.translate("Tint stamp by [color] and transparency[T](0-255)"),
+        text: "Tint stamp by [color] and transparency[T](0-255)",
         arguments: {
           color: {
             type: Scratch.ArgumentType.COLOR,
@@ -2232,7 +2222,7 @@ Other various small fixes
       {
         opcode: "offsetStamp",
         blockType: Scratch.BlockType.COMMAND,
-        text: Scratch.translate("Set stamp anchorPoint to [Anchor]"),
+        text: "Set stamp anchorPoint to [Anchor]",
         arguments: {
           Anchor: {
             menu: "AnchorPointMenu",
@@ -2250,7 +2240,7 @@ Other various small fixes
       {
         opcode: "pendrawtexturedtrifromurl",
         blockType: Scratch.BlockType.COMMAND,
-        text: Scratch.translate("Draw a triangle with points at(seperated by commas)[trianglepoints] and the uvs of [triangleuvs] with the image from url:[url]"),
+        text: "Draw a triangle with points at(seperated by commas)[trianglepoints] and the uvs of [triangleuvs] with the image from url:[url]",
         arguments: {
           url: {
             type: Scratch.ArgumentType.STRING,
@@ -2269,7 +2259,7 @@ Other various small fixes
       {
         opcode: "settripointcolour",
         blockType: Scratch.BlockType.COMMAND,
-        text: Scratch.translate("Tint point [pointmenu] by [color] and transparency[T](0-255)"),
+        text: "Tint point [pointmenu] by [color] and transparency[T](0-255)",
         arguments: {
           pointmenu: {
             type: Scratch.ArgumentType.STRING,
@@ -2288,7 +2278,7 @@ Other various small fixes
       {
         opcode: "setTriPointZ",
         blockType: Scratch.BlockType.COMMAND,
-        text: Scratch.translate("Set point [pointmenu]'s depth to [Z]"),
+        text: "Set point [pointmenu]'s depth to [Z]",
         arguments: {
           pointmenu: {
             type: Scratch.ArgumentType.STRING,
@@ -2309,7 +2299,7 @@ Other various small fixes
       {
         opcode: "drawLine",
         blockType: Scratch.BlockType.COMMAND,
-        text: Scratch.translate("Draw a line from:[x1][y1] to:[x2][y2]"),
+        text: "Draw a line from:[x1][y1] to:[x2][y2]",
         arguments: {
           x1: {
             type: Scratch.ArgumentType.NUMBER,
@@ -2333,7 +2323,7 @@ Other various small fixes
         opcode: "setLineWidth",
         blockIconURI: LineStyleIcon,
         blockType: Scratch.BlockType.COMMAND,
-        text: Scratch.translate("Set line the:[point] point's width to:[Width]"),
+        text: "Set line the:[point] point's width to:[Width]",
         arguments: {
           Width: {
             type: Scratch.ArgumentType.NUMBER,
@@ -2350,7 +2340,7 @@ Other various small fixes
         opcode: "setLineColor",
         blockIconURI: LineStyleIcon,
         blockType: Scratch.BlockType.COMMAND,
-        text: Scratch.translate("Set line color to:[color] and transparency to:[Alpha]"),
+        text: "Set line color to:[color] and transparency to:[Alpha]",
         arguments: {
           color: {
             type: Scratch.ArgumentType.COLOR,
@@ -2371,7 +2361,7 @@ Other various small fixes
       {
         opcode: "settargetsw",
         blockType: Scratch.BlockType.COMMAND,
-        text: Scratch.translate("Change the target screen size to width[width] and height[height]"),
+        text: "Change the target screen size to width[width] and height[height]",
         arguments: {
           width: {
             type: Scratch.ArgumentType.NUMBER,
@@ -2386,19 +2376,19 @@ Other various small fixes
       {
         opcode: "gettargetstagewidth",
         blockType: Scratch.BlockType.REPORTER,
-        text: Scratch.translate("Target Stage Width"),
+        text: "Target Stage Width",
         disableMonitor: true,
       },
       {
         opcode: "gettargetstageheight",
         blockType: Scratch.BlockType.REPORTER,
-        text: Scratch.translate("Target Stage Height"),
+        text: "Target Stage Height",
         disableMonitor: true,
       },
       {
         opcode: "converttocanvascoords",
         blockType: Scratch.BlockType.REPORTER,
-        text: Scratch.translate("Convert [scrcoord] to [coordTypes] units on the axis [coordmenu]"),
+        text: "Convert [scrcoord] to [coordTypes] units on the axis [coordmenu]",
         arguments: {
           coordmenu: {
             type: Scratch.ArgumentType.STRING,
@@ -2459,39 +2449,39 @@ Other various small fixes
             acceptReporters: true,
             items: [
               {
-                text: Scratch.translate("Top Left"),
+                text: "Top Left",
                 value: [0, 0],
               },
               {
-                text: Scratch.translate("Top"),
+                text: "Top",
                 value: [-0.5, 0],
               },
               {
-                text: Scratch.translate("Top Right"),
+                text: "Top Right",
                 value: [-1, 0],
               },
               {
-                text: Scratch.translate("Middle Left"),
+                text: "Middle Left",
                 value: [0, -0.5],
               },
               {
-                text: Scratch.translate("Middle"),
+                text: "Middle",
                 value: [-0.5, -0.5],
               },
               {
-                text: Scratch.translate("Middle Right"),
+                text: "Middle Right",
                 value: [-1, -0.5],
               },
               {
-                text: Scratch.translate("Bottom Left"),
+                text: "Bottom Left",
                 value: [0, -1],
               },
               {
-                text: Scratch.translate("Bottom"),
+                text: "Bottom",
                 value: [-0.5, -1],
               },
               {
-                text: Scratch.translate("Bottom Right"),
+                text: "Bottom Right",
                 value: [-1, -1],
               },
             ],
@@ -2567,7 +2557,7 @@ Other various small fixes
         if (coordmenu == "x") {
           return scrcoord - runtime.stageWidth / 2;
         } else {
-          return scrcoord * -1 - runtime.stageHeight / 2;
+          return scrcoord * -1 + runtime.stageHeight / 2;
         }
       }
     }

@@ -7,3 +7,4 @@ eslint.config.js
 *.yml
 *.md
 extensions/docs-examples
+build-snippets

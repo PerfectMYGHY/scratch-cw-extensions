@@ -1,9 +1,9 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title><%= headerText %> - TurboWarp扩展文档</title>
+    <title><%= headerText %> - TurboWarp Extension Documentation</title>
     <link rel="canonical" href="https://extensions.turbowarp.org/<%= slug %>">
     <style>
       :root {
@@ -46,6 +46,7 @@
         display: flex;
         max-width: 600px;
         margin: 0 auto;
+        justify-content: space-between;
       }
       nav a {
         display: flex;
@@ -95,6 +96,18 @@
         }
       }
 
+      .view-in-browser {
+        display: none;
+      }
+      .is-desktop .view-in-browser {
+        display: flex;
+      }
+      .is-desktop nav > div, .is-desktop .container {
+        /* Desktop app shows this page in a window, not a browser tab, so don't need to */
+        /* restrict the width of the content for readability. */
+        max-width: 100%;
+      }
+
       code {
         background-color: #eee;
         border-radius: 4px;
@@ -128,22 +141,61 @@
         margin: 1rem 0;
         font-size: small;
       }
+
+      /* General Alert Styles */
+      .alert {
+        padding-left: 15px;
+        line-height: 1;
+      }
+
+      /* Border colors for specific alerts */
+      .alert.alert-note { border-left: .25em solid #1f6feb; }
+      .alert.alert-tip { border-left: .25em solid #238636; }
+      .alert.alert-important { border-left: .25em solid #8957e5; }
+      .alert.alert-warning { border-left: .25em solid #9e6a03; }
+      .alert.alert-caution { border-left: .25em solid #da3633; }
+
+      /* Shared Styling for Alert Text */
+      .alert p:first-child {
+        padding-top: 10px;
+        font-weight: 500;
+        font-size: 14px;
+        display: flex;
+      }
+
+      /* Specific Color Overrides for Each Alert */
+      .alert.alert-note > p:first-child { color: #4493f8; }
+      .alert.alert-tip > p:first-child { color: #3fb950; }
+      .alert.alert-important > p:first-child { color: #ab7df8; }
+      .alert.alert-warning > p:first-child { color: #d29922; }
+      .alert.alert-caution > p:first-child { color: #f85149; }
+
+      /* Icon Spacing */
+      div.alert svg {
+        margin-right: 8px;
+      }
+
     </style>
   </head>
   <body>
     <nav role="navigation">
       <div>
-      <a href="/">
-        <img src="/turbowarp.svg" alt="">
-        <span>TurboWarp扩展库</span>
-      </a>
+        <a href="https://extensions.turbowarp.org/">
+          <img src="/turbowarp.svg" alt="">
+          <span>TurboWarp Extension Gallery</span>
+        </a>
+
+        <!-- Only used by desktop app -->
+        <a class="view-in-browser" href="https://extensions.turbowarp.org/<%= slug %>">
+          Read in browser
+        </a>
       </div>
     </nav>
 
     <main class="container">
       <h1><%- headerHTML %></h1>
 
-      <noscript><p>为要渲染的积木启用JavaScript。</p></noscript>
+      <noscript><p>Enable JavaScript for blocks to render.</p></noscript>
 
       <%- bodyHTML %>
 
@@ -151,12 +203,12 @@
 
       <footer>
         <p>
-          此页面是<a href="https://github.com/TurboWarp/extensions/tree/master/docs">开源的</a>。
+          This page is <a href="https://github.com/TurboWarp/extensions/tree/master/docs">open source</a>.
           <% if (usesScratchBlocks) { %>
-            用<a href="https://scratchblocks.github.io/">scratch-blocks</a>渲染的积木。
+            Blocks rendered with <a href="https://scratchblocks.github.io/">scratchblocks</a>.
           <% } %>
         </p>
-        <p>TurboWarp不隶属于Scratch、Scratch团队或Scratch基金会。</p>
+        <p>TurboWarp is not affiliated with Scratch, the Scratch Team, or the Scratch Foundation.</p>
       </footer>
     </main>
 

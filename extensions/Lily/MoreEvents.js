@@ -18,63 +18,63 @@
   // https://github.com/TurboWarp/scratch-blocks/blob/develop/blocks_vertical/event.js
   const validKeyboardInputs = [
     // Special Inputs
-    { text: Scratch.translate("space"), value: "space" },
-    { text: Scratch.translate("up arrow"), value: "up arrow" },
-    { text: Scratch.translate("down arrow"), value: "down arrow" },
-    { text: Scratch.translate("right arrow"), value: "right arrow" },
-    { text: Scratch.translate("left arrow"), value: "left arrow" },
-    { text: Scratch.translate("enter"), value: "enter" },
+    { text: "space", value: "space" },
+    { text: "up arrow", value: "up arrow" },
+    { text: "down arrow", value: "down arrow" },
+    { text: "right arrow", value: "right arrow" },
+    { text: "left arrow", value: "left arrow" },
+    { text: "enter", value: "enter" },
     // TW: Extra Special Inputs
-    { text: Scratch.translate("backspace"), value: "backspace" },
-    { text: Scratch.translate("delete"), value: "delete" },
-    { text: Scratch.translate("shift"), value: "shift" },
-    { text: Scratch.translate("caps lock"), value: "caps lock" },
-    { text: Scratch.translate("scroll lock"), value: "scroll lock" },
-    { text: Scratch.translate("control"), value: "control" },
-    { text: Scratch.translate("escape"), value: "escape" },
-    { text: Scratch.translate("insert"), value: "insert" },
-    { text: Scratch.translate("home"), value: "home" },
-    { text: Scratch.translate("end"), value: "end" },
-    { text: Scratch.translate("page up"), value: "page up" },
-    { text: Scratch.translate("page down"), value: "page down" },
+    { text: "backspace", value: "backspace" },
+    { text: "delete", value: "delete" },
+    { text: "shift", value: "shift" },
+    { text: "caps lock", value: "caps lock" },
+    { text: "scroll lock", value: "scroll lock" },
+    { text: "control", value: "control" },
+    { text: "escape", value: "escape" },
+    { text: "insert", value: "insert" },
+    { text: "home", value: "home" },
+    { text: "end", value: "end" },
+    { text: "page up", value: "page up" },
+    { text: "page down", value: "page down" },
     // Letter Keyboard Inputs
-    { text: Scratch.translate("a"), value: "a" },
-    { text: Scratch.translate("b"), value: "b" },
-    { text: Scratch.translate("c"), value: "c" },
-    { text: Scratch.translate("d"), value: "d" },
-    { text: Scratch.translate("e"), value: "e" },
-    { text: Scratch.translate("f"), value: "f" },
-    { text: Scratch.translate("g"), value: "g" },
-    { text: Scratch.translate("h"), value: "h" },
-    { text: Scratch.translate("i"), value: "i" },
-    { text: Scratch.translate("j"), value: "j" },
-    { text: Scratch.translate("k"), value: "k" },
-    { text: Scratch.translate("l"), value: "l" },
-    { text: Scratch.translate("m"), value: "m" },
-    { text: Scratch.translate("n"), value: "n" },
-    { text: Scratch.translate("o"), value: "o" },
-    { text: Scratch.translate("p"), value: "p" },
-    { text: Scratch.translate("q"), value: "q" },
-    { text: Scratch.translate("r"), value: "r" },
-    { text: Scratch.translate("s"), value: "s" },
-    { text: Scratch.translate("t"), value: "t" },
-    { text: Scratch.translate("u"), value: "u" },
-    { text: Scratch.translate("v"), value: "v" },
-    { text: Scratch.translate("w"), value: "w" },
-    { text: Scratch.translate("x"), value: "x" },
-    { text: Scratch.translate("y"), value: "y" },
-    { text: Scratch.translate("z"), value: "z" },
+    { text: "a", value: "a" },
+    { text: "b", value: "b" },
+    { text: "c", value: "c" },
+    { text: "d", value: "d" },
+    { text: "e", value: "e" },
+    { text: "f", value: "f" },
+    { text: "g", value: "g" },
+    { text: "h", value: "h" },
+    { text: "i", value: "i" },
+    { text: "j", value: "j" },
+    { text: "k", value: "k" },
+    { text: "l", value: "l" },
+    { text: "m", value: "m" },
+    { text: "n", value: "n" },
+    { text: "o", value: "o" },
+    { text: "p", value: "p" },
+    { text: "q", value: "q" },
+    { text: "r", value: "r" },
+    { text: "s", value: "s" },
+    { text: "t", value: "t" },
+    { text: "u", value: "u" },
+    { text: "v", value: "v" },
+    { text: "w", value: "w" },
+    { text: "x", value: "x" },
+    { text: "y", value: "y" },
+    { text: "z", value: "z" },
     // Number Keyboard Inputs
-    { text: Scratch.translate("0"), value: "0" },
-    { text: Scratch.translate("1"), value: "1" },
-    { text: Scratch.translate("2"), value: "2" },
-    { text: Scratch.translate("3"), value: "3" },
-    { text: Scratch.translate("4"), value: "4" },
-    { text: Scratch.translate("5"), value: "5" },
-    { text: Scratch.translate("6"), value: "6" },
-    { text: Scratch.translate("7"), value: "7" },
-    { text: Scratch.translate("8"), value: "8" },
-    { text: Scratch.translate("9"), value: "9" },
+    { text: "0", value: "0" },
+    { text: "1", value: "1" },
+    { text: "2", value: "2" },
+    { text: "3", value: "3" },
+    { text: "4", value: "4" },
+    { text: "5", value: "5" },
+    { text: "6", value: "6" },
+    { text: "7", value: "7" },
+    { text: "8", value: "8" },
+    { text: "9", value: "9" },
   ];
 
   var lastValues = {};
@@ -358,7 +358,9 @@
           {
             opcode: "broadcastToTargetAndWait",
             blockType: Scratch.BlockType.COMMAND,
-            text: Scratch.translate("broadcast [BROADCAST_OPTION] to [TARGET] and wait"),
+            text: Scratch.translate(
+              "broadcast [BROADCAST_OPTION] to [TARGET] and wait"
+            ),
             arguments: {
               BROADCAST_OPTION: {
                 type: null,
@@ -377,7 +379,9 @@
           {
             opcode: "broadcastData",
             blockType: Scratch.BlockType.COMMAND,
-            text: Scratch.translate("broadcast [BROADCAST_OPTION] with data [DATA]"),
+            text: Scratch.translate(
+              "broadcast [BROADCAST_OPTION] with data [DATA]"
+            ),
             arguments: {
               BROADCAST_OPTION: {
                 type: null,
@@ -392,7 +396,9 @@
           {
             opcode: "broadcastDataAndWait",
             blockType: Scratch.BlockType.COMMAND,
-            text: Scratch.translate("broadcast [BROADCAST_OPTION] with data [DATA] and wait"),
+            text: Scratch.translate(
+              "broadcast [BROADCAST_OPTION] with data [DATA] and wait"
+            ),
             arguments: {
               BROADCAST_OPTION: {
                 type: null,
@@ -422,7 +428,9 @@
           {
             opcode: "broadcastDataToTarget",
             blockType: Scratch.BlockType.COMMAND,
-            text: Scratch.translate("broadcast [BROADCAST_OPTION] to [TARGET] with data [DATA]"),
+            text: Scratch.translate(
+              "broadcast [BROADCAST_OPTION] to [TARGET] with data [DATA]"
+            ),
             func: "broadcastToTarget",
             arguments: {
               BROADCAST_OPTION: {
@@ -442,7 +450,9 @@
           {
             opcode: "broadcastDataToTargetAndWait",
             blockType: Scratch.BlockType.COMMAND,
-            text: Scratch.translate("broadcast [BROADCAST_OPTION] to [TARGET] with data [DATA] and wait"),
+            text: Scratch.translate(
+              "broadcast [BROADCAST_OPTION] to [TARGET] with data [DATA] and wait"
+            ),
             func: "broadcastToTargetAndWait",
             arguments: {
               BROADCAST_OPTION: {
@@ -494,15 +504,39 @@
           // Attributes have acceptReporters: false
           action: {
             acceptReporters: false,
-            items: ["hit", "released"],
+            items: [
+              {
+                text: Scratch.translate("hit"),
+                value: "hit",
+              },
+              {
+                text: Scratch.translate("released"),
+                value: "released",
+              },
+            ],
           },
           boolean: {
             acceptReporters: false,
-            items: ["true", "false"],
+            items: [
+              {
+                text: Scratch.translate("true"),
+                value: "true",
+              },
+              {
+                text: Scratch.translate("false"),
+                value: "false",
+              },
+            ],
           },
+          // This menu is unused, however we can't remove it as that could break projects
+          // that use the menu through the All Menus extension.
           state: {
             acceptReporters: false,
-            items: ["enabled", "disabled"],
+            items: [
+              // Unused, so don't bother translating
+              "enabled",
+              "disabled",
+            ],
           },
         },
       };
@@ -517,11 +551,12 @@
     }
 
     whenValueChanged(args, util) {
-      const blockId = util.thread.peekStack();
-      if (!lastValues[blockId])
-        lastValues[blockId] = Scratch.Cast.toString(args.INPUT);
-      if (lastValues[blockId] !== Scratch.Cast.toString(args.INPUT)) {
-        lastValues[blockId] = Scratch.Cast.toString(args.INPUT);
+      const cacheId = util.thread.getId();
+      if (!lastValues[cacheId]) {
+        lastValues[cacheId] = Scratch.Cast.toString(args.INPUT);
+      }
+      if (lastValues[cacheId] !== Scratch.Cast.toString(args.INPUT)) {
+        lastValues[cacheId] = Scratch.Cast.toString(args.INPUT);
         return true;
       }
       return false;
@@ -697,7 +732,7 @@
     }
 
     _getTargets() {
-      const spriteNames = [{ text: Scratch.translate("Stage"), value: "_stage_" }];
+      const spriteNames = [{ text: "Stage", value: "_stage_" }];
       const targets = Scratch.vm.runtime.targets;
       for (let index = 1; index < targets.length; index++) {
         const target = targets[index];
@@ -712,7 +747,7 @@
       if (spriteNames.length > 0) {
         return spriteNames;
       } else {
-        return [{ text: Scratch.translate(""), value: 0 }]; //this should never happen but it's a failsafe
+        return [{ text: "", value: 0 }]; //this should never happen but it's a failsafe
       }
     }
   }

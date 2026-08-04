@@ -1,165 +1,196 @@
 # Box2D
 
-这个扩展允许你轻松地使用一个名为 Box2D 的物理库实现真实的物理效果。
+This extension allows you to easily implement proper physics using a physics library called Box2D.
 
-## 世界
+## World
 
-调整所有精灵的物理属性。
-
-```scratch
-设置舞台为 [封闭舞台 v] :: #0FBD8C
-```
-选择一种包含类型以保持精灵在舞台内。
-
- - 封闭舞台：防止精灵从底部和侧边移出。
- - 开放（有地板）：防止精灵从底部移出。
- - 开放（无地板）：移除所有边界；精灵可以随意移动。
+Adjust the physics of all sprites.
 
 ```scratch
-将重力设置为 x: [0] y: [-10] :: #0FBD8C
+setup stage boundaries to [boxed stage v] :: #0FBD8C
 ```
-改变重力的方向和强度。
+Choose a type of containment to keep sprites within the stage.
+
+ - `boxed stage`: Keeps sprites from going off the bottom and sides.
+ - `open (with floor)`: Keeps sprites from going off the bottom.
+ - `open (no floor)`: Removes all boundaries; sprites can go wherever they want.
+
+---
 
 ```scratch
-前进一步 :: #0FBD8C
+set gravity to x: [0] y: [-10] :: #0FBD8C
 ```
+Change the direction and strength of gravity.
 
-在时间上前进一步。将这个积木放入循环中，以保持物理效果的持续进行。
+---
 
 ```scratch
-将模拟速率设置为 (30)/秒 :: #0FBD8C
+step simulation :: #0FBD8C
 ```
 
-设置多少个模拟步骤算作一秒。通常这应该是项目的帧率，但也可以用来减慢或加快时间。
+Move forward in time by one step. Run this in a loop to keep the physics going.
 
-你可以通过 (模拟速率) 记者获取当前的模拟速率。
-
-## 精灵
-
-操作单个精灵。
 
 ```scratch
-为 [这个服装 v] 启用模式 [普通 v] :: #0FBD8C
+set simulation rate to (30)/s :: #0FBD8C
 ```
 
-使物理效果应用到这个精灵。它也可以与其他启用了物理的精灵发生碰撞。
+Set how much simulation steps is considered one second. Usually this should be project's framerate, but can also be used to slow down or speed up time.
 
- - 为这个服装启用：仅为当前精灵或克隆体启用物理。
- - 为这个圆形启用：将物理效果应用于当前精灵或克隆体，就像它的形状是一个圆形一样。
- - 为所有精灵启用：为所有精灵启用物理。
+You can get the current simulation rate with the (simulation rate) reporter.
 
-精度模式会让精灵更加努力地避免与其他物体重叠。请注意，这可能会降低性能，甚至导致项目卡死，因此请谨慎使用。
+## Sprites
+
+Manipulate individual sprites.
 
 ```scratch
-禁用这个精灵的物理 :: #0FBD8C
+enable for [this costume v] mode [normal v] :: #0FBD8C
 ```
 
-使物理效果不再应用于这个精灵。
+Make physics apply to this sprite. It can also collide with other sprites that have physics enabled.
+
+ - `this costume`: Enable physics only for the current sprite or clone, tracing the convex hull of the costume. Faster than `this polygon` and less likely to have physics errors, but less accurate.
+ - `this circle`: Enable physics for the current sprite or clone as if it were shaped like a circle.
+ - `this polygon`: Enable physics for the current sprite or clone, tracing full shape of the costume. Slower than `this costume`, but more accurately reflects costume shape.
+ - `all sprites`: Enable physics for all sprites.
+
+Precision mode will make the sprite work extra hard to make sure it doesn't overlap with anything.
+
+> [!CAUTION]
+> Precision mode should be used with care as it can decrease performance and even cause the project to get stuck.
+
+---
 
 ```scratch
-移动到 x: [0] y: [0] [在世界中 v] :: #0FBD8C
+disable physics for this sprite :: #0FBD8C
 ```
 
-使精灵移动到指定的位置。
+Makes physics no longer apply to this sprite.
 
- - 在世界中：相对于世界的中心。
- - 在舞台上：相对于屏幕的中心（如果你已经滚动了）。
- - 相对：相对于自身。
+---
 
 ```scratch
-将速度设置为 sx: [0] sy: [0] :: #0FBD8C
+go to x: [0] y: [0] [in world v] :: #0FBD8C
 ```
 
-将精灵的速度（速度）设置为指定的值。
+Make the sprite go to the specified location.
 
-你可以通过 (x 速度) 和 (y 速度) 记者获取当前精灵的速度。
+ - `in world`: Relative to the center of the world.
+ - `on stage`: Relative to the center of the screen (if you've scrolled it).
+ - `relative`: Relative to itself.
+
+---
 
 ```scratch
-用力 [25] 在方向 [0] 推动 :: #0FBD8C
+set velocity to sx: [0] sy: [0] :: #0FBD8C
 ```
 
-直接将精灵推向某个方向，增加其当前速度。
+Set the velocity (speed) of the sprite to the specified value.
+
+You can get the velocity of the current sprite with the (x velocity) and (y velocity) reporters.
+
+---
 
 ```scratch
-将角速度设置为 [30] :: #0FBD8C
+push with force [25] in direction [0] :: #0FBD8C
 ```
-将精灵的角速度（旋转速度）设置为指定的值。
 
-你可以通过 (角速度) 记者获取精灵当前的角速度。
+Directly send the sprite flying in a certain direction, adding on to its current velocity.
+
+---
 
 ```scratch
-用力 [500] 旋转 :: #0FBD8C
+set angular velocity to [30] :: #0FBD8C
 ```
-直接将精灵旋转，增加其当前的角速度（旋转速度）。
+Set the angular velocity (rotational speed) of the sprite to the specified value.
+
+You can get the angular velocity of the current sprite with the (angular velocity) reporter.
+
+---
 
 ```scratch
-设置为 [固定在原地 v] :: #0FBD8C
+spin with force [500] :: #0FBD8C
 ```
-选择精灵是固定在原地还是可以移动。
+Directly send the sprite spinning, adding on to its current angular (rotational) velocity.
 
-你可以通过 (是否固定?) 记者判断精灵是否当前固定在原地。
+---
 
 ```scratch
-设置密度 [普通 v] :: #0FBD8C
+set fixed to [fixed in place v] :: #0FBD8C
 ```
-设置精灵的密度，这会影响其重量。
+Choose whether the sprite is fixed in place or can move around.
 
-你可以通过 (密度) 记者获取精灵当前的密度。
+You can tell if the sprite is currently fixed in place with the (fixed?) reporter.
+
+---
 
 ```scratch
-设置摩擦力 [普通 v] :: #0FBD8C
+set density to [normal v] :: #0FBD8C
 ```
-设置精灵的粗糙度。更平滑的设置使精灵更滑。
+Set the sprite's density, which affects how heavy it is.
 
-你可以通过 (摩擦力) 记者获取精灵当前的摩擦力。
+You can get the sprite's current density with the (density) reporter.
+
+---
 
 ```scratch
-设置弹性 [普通 v] :: #0FBD8C
+set friction to [normal v] :: #0FBD8C
 ```
-设置精灵的弹性。
+Set the sprite's roughness. Smoother settings make the sprite slipperier.
 
-你可以通过 (弹性) 记者获取精灵当前的弹性。
+You can get the sprite's current friction with the (friction) reporter.
+
+---
 
 ```scratch
-(碰触 [任何 v] :: #0FBD8C)
+set bounce to [normal v] :: #0FBD8C
 ```
-返回精灵正在接触的其他精灵。也包括舞台的边缘。
+Set the sprite's bounciness.
 
-如果有多个精灵正在接触，它将返回一个以逗号分隔的列表。
+You can get the sprite's current bounciness with the (bounce) reporter.
 
-## 屏幕
-
-移动相机在世界中。
+---
 
 ```scratch
-设置滚动 x: [0] y: [0] :: #0FBD8C
+(list sprites touching [any v] :: #0FBD8C)
+```
+Returns what other sprites the sprite is touching. Also includes the edges of the stage.
+
+If there are multiple sprites touching, it will return a comma-separated list of them.
+
+## Screen
+
+Move the camera around the world.
+
+```scratch
+set scroll x: [0] y: [0] :: #0FBD8C
 ```
 
-滚动到所需位置。
+Scroll to the desired location.
 
-你可以通过 (x 滚动) 和 (y 滚动) 记者获取当前的屏幕位置。
+You can get the current screen position with the (x scroll) and (y scroll) reporters.
 
-这不会影响通过 [设置舞台] 积木设置的世界边界。
+This will not affect the world boundaries set by the [setup stage] block.
 
-## 示例
+## Example
 
 ```scratch
 when flag clicked
-设置舞台为 [封闭舞台 v] :: #0FBD8C
-将重力设置为 x: [0] y: [-10] :: #0FBD8C
+setup stage boundaries to [boxed stage v] :: #0FBD8C
+set gravity to x: [0] y: [-10] :: #0FBD8C
 create clone of (myself v)
 repeat [20]
-    逐步模拟 :: #0FBD8C
+    step simulation :: #0FBD8C
 end
 create clone of (myself v)
 forever
-    逐步模拟 :: #0FBD8C
+    step simulation :: #0FBD8C
 end
 
 when I start as a clone
 show
-为 [这个服装 v] 启用模式 [普通 v] :: #0FBD8C
-移动到 x: [-150] y: [240] [在世界中 v] :: #0FBD8C
-设置弹性 [相当有弹性 v] :: #0FBD8C
-将角速度设置为 [-4.1] :: #0FBD8C
+enable for [this costume v] mode [normal v] :: #0FBD8C
+go to x: [-150] y: [240] [in world v] :: #0FBD8C
+set bounce to [quite bouncy v] :: #0FBD8C
+set angular velocity to [-4.1] :: #0FBD8C
 ```

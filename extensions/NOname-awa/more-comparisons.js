@@ -31,10 +31,11 @@
             arguments: {},
             disableMonitor: true,
           },
+          /* eslint-disable extension/should-translate */
           {
             opcode: "boolean",
             blockType: Scratch.BlockType.BOOLEAN,
-            text: Scratch.translate("[a]"),
+            text: "[a]",
             arguments: {
               a: {
                 type: Scratch.ArgumentType.STRING,
@@ -45,7 +46,7 @@
           {
             opcode: "booleanToInt",
             blockType: Scratch.BlockType.REPORTER,
-            text: Scratch.translate("[a]"),
+            text: "[a]",
             arguments: {
               a: {
                 type: Scratch.ArgumentType.BOOLEAN,
@@ -56,7 +57,7 @@
           {
             opcode: "equal",
             blockType: Scratch.BlockType.BOOLEAN,
-            text: Scratch.translate("[a] == [b]"),
+            text: "[a] == [b]",
             arguments: {
               a: {
                 type: Scratch.ArgumentType.STRING,
@@ -71,7 +72,7 @@
           {
             opcode: "equalNegative",
             blockType: Scratch.BlockType.BOOLEAN,
-            text: Scratch.translate("[a] =- [b]"),
+            text: "[a] =- [b]",
             arguments: {
               a: {
                 type: Scratch.ArgumentType.NUMBER,
@@ -86,7 +87,7 @@
           {
             opcode: "equalPlusMinus",
             blockType: Scratch.BlockType.BOOLEAN,
-            text: Scratch.translate("[a] =± [b]"),
+            text: "[a] =± [b]",
             arguments: {
               a: {
                 type: Scratch.ArgumentType.NUMBER,
@@ -101,7 +102,7 @@
           {
             opcode: "notEqual",
             blockType: Scratch.BlockType.BOOLEAN,
-            text: Scratch.translate("[a] ≠ [b]"),
+            text: "[a] ≠ [b]",
             arguments: {
               a: {
                 type: Scratch.ArgumentType.STRING,
@@ -116,7 +117,7 @@
           {
             opcode: "almostEqual2n",
             blockType: Scratch.BlockType.BOOLEAN,
-            text: Scratch.translate("[a] ≈ [b]"),
+            text: "[a] ≈ [b]",
             arguments: {
               a: {
                 type: Scratch.ArgumentType.NUMBER,
@@ -131,7 +132,7 @@
           {
             opcode: "almostEqual3n",
             blockType: Scratch.BlockType.BOOLEAN,
-            text: Scratch.translate("[a] ≈ [b] ± [c]"),
+            text: "[a] ≈ [b] ± [c]",
             arguments: {
               a: {
                 type: Scratch.ArgumentType.NUMBER,
@@ -150,7 +151,7 @@
           {
             opcode: "xor",
             blockType: Scratch.BlockType.BOOLEAN,
-            text: Scratch.translate("[a] ^ [b]"),
+            text: "[a] ^ [b]",
             arguments: {
               a: {
                 type: Scratch.ArgumentType.BOOLEAN,
@@ -164,7 +165,7 @@
           {
             opcode: "equalOrGreater",
             blockType: Scratch.BlockType.BOOLEAN,
-            text: Scratch.translate("[a] ≥ [b]"),
+            text: "[a] ≥ [b]",
             arguments: {
               a: {
                 type: Scratch.ArgumentType.NUMBER,
@@ -179,7 +180,7 @@
           {
             opcode: "equalOrLess",
             blockType: Scratch.BlockType.BOOLEAN,
-            text: Scratch.translate("[a] ≤ [b]"),
+            text: "[a] ≤ [b]",
             arguments: {
               a: {
                 type: Scratch.ArgumentType.NUMBER,
@@ -194,7 +195,7 @@
           {
             opcode: "between",
             blockType: Scratch.BlockType.BOOLEAN,
-            text: Scratch.translate("[a] < [b] < [c]"),
+            text: "[a] < [b] < [c]",
             arguments: {
               a: {
                 type: Scratch.ArgumentType.NUMBER,
@@ -213,7 +214,7 @@
           {
             opcode: "betweenEqual",
             blockType: Scratch.BlockType.BOOLEAN,
-            text: Scratch.translate("[a] ≤ [b] ≤ [c]"),
+            text: "[a] ≤ [b] ≤ [c]",
             arguments: {
               a: {
                 type: Scratch.ArgumentType.NUMBER,
@@ -233,7 +234,7 @@
           {
             opcode: "vertical",
             blockType: Scratch.BlockType.BOOLEAN,
-            text: Scratch.translate("[a] ⊥ [b]"),
+            text: "[a] ⊥ [b]",
             arguments: {
               a: {
                 type: Scratch.ArgumentType.ANGLE,
@@ -248,7 +249,7 @@
           {
             opcode: "segment_one",
             blockType: Scratch.BlockType.BOOLEAN,
-            text: Scratch.translate("⎵ ([x1],[y1]) ([x2],[y2]) = [n]"),
+            text: "⎵ ([x1],[y1]) ([x2],[y2]) = [n]",
             arguments: {
               x1: {
                 type: Scratch.ArgumentType.NUMBER,
@@ -276,7 +277,7 @@
           {
             opcode: "segment_two",
             blockType: Scratch.BlockType.BOOLEAN,
-            text: Scratch.translate("⎵ ([x11],[y11]) ([x12],[y12]) = ⎵ ([x21],[y21]) ([x22],[y22])"),
+            text: "⎵ ([x11],[y11]) ([x12],[y12]) = ⎵ ([x21],[y21]) ([x22],[y22])",
             arguments: {
               x11: {
                 type: Scratch.ArgumentType.NUMBER,
@@ -316,7 +317,7 @@
           {
             opcode: "segment",
             blockType: Scratch.BlockType.REPORTER,
-            text: Scratch.translate("⎵ ([x1],[y1]) ([x2],[y2])"),
+            text: "⎵ ([x1],[y1]) ([x2],[y2])",
             arguments: {
               x1: {
                 type: Scratch.ArgumentType.NUMBER,
@@ -340,7 +341,7 @@
           {
             opcode: "Squadrilateral_one",
             blockType: Scratch.BlockType.BOOLEAN,
-            text: Scratch.translate("[IMAGE] ([x1],[y1]) ([x2],[y2]) ([x3],[y3]) ([x4],[y4]) = [n]"),
+            text: "[IMAGE] ([x1],[y1]) ([x2],[y2]) ([x3],[y3]) ([x4],[y4]) = [n]",
             arguments: {
               x1: {
                 type: Scratch.ArgumentType.NUMBER,
@@ -390,7 +391,7 @@
           {
             opcode: "Squadrilateral",
             blockType: Scratch.BlockType.REPORTER,
-            text: Scratch.translate("[IMAGE] ([x1],[y1]) ([x2],[y2]) ([x3],[y3]) ([x4],[y4])"),
+            text: "[IMAGE] ([x1],[y1]) ([x2],[y2]) ([x3],[y3]) ([x4],[y4])",
             arguments: {
               x1: {
                 type: Scratch.ArgumentType.NUMBER,
@@ -432,6 +433,7 @@
               },
             },
           },
+          /* eslint-enable extension/should-translate */
         ],
       };
     }

@@ -103,7 +103,8 @@
     getInfo() {
       return {
         id: "gsaWebsocket",
-        name: Scratch.translate("WebSocket"),
+        // eslint-disable-next-line extension/should-translate
+        name: "WebSocket",
         docsURI: "https://extensions.turbowarp.org/godslayerakp/ws",
         color1: "#307eff",
         color2: "#2c5eb0",
@@ -114,7 +115,7 @@
             arguments: {
               URL: {
                 type: ArgumentType.STRING,
-                defaultValue: "wss://echoserver.redman13.repl.co",
+                defaultValue: "wss://echo.websocket.org/",
               },
             },
             text: Scratch.translate("connect to [URL]"),
@@ -154,7 +155,7 @@
             arguments: {
               PAYLOAD: {
                 type: ArgumentType.STRING,
-                defaultValue: "hello!",
+                defaultValue: "Hello!",
               },
             },
             text: Scratch.translate("send message [PAYLOAD]"),
@@ -170,7 +171,7 @@
           {
             opcode: "hasErrored",
             blockType: BlockType.BOOLEAN,
-            text: Scratch.translate("has connection errored?"),
+            text: Scratch.translate("connection errored?"),
             disableMonitor: true,
           },
           "---",
@@ -228,7 +229,9 @@
                 defaultValue: "fulfilled",
               },
             },
-            text: Scratch.translate("close connection with reason [REASON] and code [CODE]"),
+            text: Scratch.translate(
+              "close connection with reason [REASON] and code [CODE]"
+            ),
           },
         ],
       };
@@ -291,7 +294,7 @@
               }
 
               // canFetch() checked above
-              // eslint-disable-next-line no-restricted-syntax
+              // eslint-disable-next-line extension/check-can-fetch
               const websocket = new WebSocket(url);
               instance.websocket = websocket;
 

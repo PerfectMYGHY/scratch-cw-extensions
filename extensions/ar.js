@@ -640,7 +640,9 @@
           {
             opcode: "turnSpaceBy",
             blockType: BlockType.COMMAND,
-            text: Scratch.translate("turn everything by r:[R] i:[I] j:[J] k:[K]"),
+            text: Scratch.translate(
+              "turn everything by r:[R] i:[I] j:[J] k:[K]"
+            ),
             arguments: {
               R: {
                 type: ArgumentType.NUMBER,
@@ -678,15 +680,15 @@
             acceptReporters: false,
             items: [
               {
-                text: Scratch.translate("x"),
+                text: "x",
                 value: "x",
               },
               {
-                text: Scratch.translate("y"),
+                text: "y",
                 value: "y",
               },
               {
-                text: Scratch.translate("z"),
+                text: "z",
                 value: "z",
               },
             ],
@@ -695,30 +697,45 @@
             acceptReporters: false,
             items: [
               {
-                text: Scratch.translate("r"),
+                text: "r",
                 value: "w",
               },
               {
-                text: Scratch.translate("i"),
+                text: "i",
                 value: "x",
               },
               {
-                text: Scratch.translate("j"),
+                text: "j",
                 value: "y",
               },
               {
-                text: Scratch.translate("k"),
+                text: "k",
                 value: "z",
               },
             ],
           },
           xrMatrix: {
             acceptReporters: false,
-            items: ["combined", "projection", "view", "inverse view"],
+            items: [
+              { text: Scratch.translate("combined"), value: "combined" },
+              { text: Scratch.translate("projection"), value: "projection" },
+              { text: Scratch.translate("view"), value: "view" },
+              {
+                text: Scratch.translate("inverse view"),
+                value: "inverse view",
+              },
+            ],
           },
           xrFeature: {
             acceptReporters: false,
-            items: ["ar", "pose", "hit position"],
+            items: [
+              { text: Scratch.translate("ar"), value: "ar" },
+              { text: Scratch.translate("pose"), value: "pose" },
+              {
+                text: Scratch.translate("hit position"),
+                value: "hit position",
+              },
+            ],
           },
         },
       };
@@ -757,7 +774,7 @@
     }
     getMatrixItem(args) {
       let item = args.ITEM | 0;
-      if (item < 1 && item > 16) return "";
+      if (item < 1 || item > 16) return "";
       let matrix = null;
       switch (args.MATRIX) {
         case "combined":
@@ -843,7 +860,7 @@
   const externalTransforms =
     s3dApi.externalTransforms ?? (s3dApi.externalTransforms = {});
   externalTransforms["ar_combined"] = {
-    name: Scratch.translate("AR: combined"),
+    name: "AR: combined",
     get() {
       return (
         // prettier-ignore
@@ -857,7 +874,7 @@
     },
   };
   externalTransforms["ar_projection"] = {
-    name: Scratch.translate("AR: view to projected"),
+    name: "AR: view to projected",
     get() {
       return (
         // prettier-ignore
@@ -871,7 +888,7 @@
     },
   };
   externalTransforms["ar_view"] = {
-    name: Scratch.translate("AR: view to world"),
+    name: "AR: view to world",
     get() {
       return (
         // prettier-ignore
@@ -885,7 +902,7 @@
     },
   };
   externalTransforms["ar_inverse_view"] = {
-    name: Scratch.translate("AR: world to view"),
+    name: "AR: world to view",
     get() {
       return (
         // prettier-ignore
