@@ -1,5 +1,9 @@
 [
   // This file supports comments
+  "webmaster/AdvancedPlayback",
+  "webmaster/safeExt",
+  "ABCD/URLProcessor",
+  "ABCD/AdvancedFileOperations",
   "lab/text",
   "lab/face-sensing",
   "lab/video-sprites",
@@ -17,6 +21,7 @@
   "bitwise",
   "Skyhigh173/bigint",
   "utilities",
+  "sound",
   "Lily/Video",
   "iframe",
   "Clay/htmlEncode",
@@ -97,6 +102,7 @@
   "CubesterYT/Webhooks",
   "Lily/CommentBlocks",
   "veggiecan/LongmanDictionary",
+  "CubesterYT/TurboHook",
   "Alestore/nfcwarp",
   "NishiOwO/dectalk",
   "steamworks",
