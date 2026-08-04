@@ -369,7 +369,7 @@ class HomepageFile extends BuildFile {
     this.host =
       mode === "development"
         ? "http://localhost:8000/"
-        : "https://extensions.turbowarp.org/";
+        : "https://extensions.scratch-cw.top/";
   }
 
   getType() {
@@ -385,7 +385,7 @@ class HomepageFile extends BuildFile {
   }
 
   getRunExtensionURL(extensionSlug) {
-    return `https://turbowarp.org/editor?extension=${this.getFullExtensionURL(
+    return `https://www.scratch-cw.top/create?extension=${this.getFullExtensionURL(
       extensionSlug
     )}`;
   }
@@ -396,7 +396,7 @@ class HomepageFile extends BuildFile {
    */
   getRunSampleURL(sampleFile) {
     const path = encodeURIComponent(`samples/${sampleFile.getSlug()}`);
-    return `https://turbowarp.org/editor?project_url=${this.host}${path}`;
+    return `https://www.scratch-cw.top/create?project_url=${this.host}${path}`;
   }
 
   read() {
@@ -581,7 +581,7 @@ class SitemapFile extends BuildFile {
         if (a.length > b.length) return 1;
         return a - b;
       })
-      .map((path) => `https://extensions.turbowarp.org${path}`)
+      .map((path) => `https://extensions.scratch-cw.top${path}`)
       .map((absoluteURL) => `<url><loc>${absoluteURL}</loc></url>`)
       .join("\n");
 
@@ -635,7 +635,7 @@ class SampleFile extends BuildFile {
 
     for (const url of urls) {
       if (
-        !url.startsWith("https://extensions.turbowarp.org/") ||
+        !url.startsWith("https://extensions.scratch-cw.top/") ||
         !url.endsWith(".js")
       ) {
         throw new Error(`Invalid extension URL for sample: ${url}`);

@@ -3,8 +3,8 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title><%= headerText %> - TurboWarp Extension Documentation</title>
-    <link rel="canonical" href="https://extensions.turbowarp.org/<%= slug %>">
+    <title><%= headerText %> - TurboWarp 扩展文档</title>
+    <link rel="canonical" href="https://extensions.scratch-cw.top/<%= slug %>">
     <style>
       :root {
         font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -180,14 +180,14 @@
   <body>
     <nav role="navigation">
       <div>
-        <a href="https://extensions.turbowarp.org/">
+        <a href="https://extensions.scratch-cw.top/">
           <img src="/turbowarp.svg" alt="">
-          <span>TurboWarp Extension Gallery</span>
+          <span>Scratch 创世界 的 TurboWarp 扩展库</span>
         </a>
 
         <!-- Only used by desktop app -->
-        <a class="view-in-browser" href="https://extensions.turbowarp.org/<%= slug %>">
-          Read in browser
+        <a class="view-in-browser" href="https://extensions.scratch-cw.top/<%= slug %>">
+          在浏览器中阅读
         </a>
       </div>
     </nav>
@@ -195,7 +195,7 @@
     <main class="container">
       <h1><%- headerHTML %></h1>
 
-      <noscript><p>Enable JavaScript for blocks to render.</p></noscript>
+      <noscript><p>启用 JavaScript 以渲染积木。</p></noscript>
 
       <%- bodyHTML %>
 
@@ -203,12 +203,12 @@
 
       <footer>
         <p>
-          This page is <a href="https://github.com/TurboWarp/extensions/tree/master/docs">open source</a>.
+          此页面是 <a href="https://github.com/PerfectMYGHY/scratch-cw-extensions/tree/master/docs">开源的</a>。
           <% if (usesScratchBlocks) { %>
-            Blocks rendered with <a href="https://scratchblocks.github.io/">scratchblocks</a>.
+            积木由 <a href="https://scratchblocks.github.io/">scratchblocks</a> 渲染。
           <% } %>
         </p>
-        <p>TurboWarp is not affiliated with Scratch, the Scratch Team, or the Scratch Foundation.</p>
+        <p>Scratch 创世界、TurboWarp 与 Scratch、Scratch 团队或 Scratch 基金会无关。</p>
       </footer>
     </main>
 

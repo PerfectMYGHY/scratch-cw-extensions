@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf8">
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>TurboWarp Extension Gallery</title>
+    <title>Scratch 创世界 的 TurboWarp 扩展库</title>
     <meta name="theme-color" content="#ff4c4c">
     <meta name="description" content="The official place to find powerful unsandboxed extensions for TurboWarp.">
     <style>
@@ -315,31 +315,31 @@
            <path d="m108.34581 25.3789q-1.19093 5.210345-1.7864 11.313892-0.14887 1.637537 0.29773 4.168276 0.4466 2.97734 0.4466 4.168276 0 3.870542-5.06147 3.870542-3.275078 0-4.317148-1.935271-0.14887-3.275074 0.14887-8.93202 0.29773-6.699015 0.29773-8.93202-0.14886 0-0.4466-0.297734-13.84463 0.595468-26.05172 1.786404-0.29774 1.935271 0 4.763744l0.59546 5.359212q-0.59546 4.614877-0.59546 13.695765 0.4466 3.870542 0.4466 33.197344v10.86729q0 2.53074 0.74433 3.57281h9.22976q5.65694-0.74434 5.65694 4.76374 0 3.27508-3.1262 4.61488-1.93528 0.74434-6.84789 0.29774-2.97734-0.29774-6.99675-0.14887-5.50808 0.74433-13.39803 1.19093-8.03881 0.44661-9.825218-2.233-1.190936-1.7864 0-3.72168 2.084138-3.27507 10.867288-3.27507 4.61488 0 4.61488-2.53074 0-1.3398-0.14887-2.53074 0-3.72168 0.14887-6.55015 0.4466-8.03882 0-22.627784-0.59547-21.139115 0.4466-37.961086l-0.4466-0.446601q-4.61488 0.297734-17.268572-0.148867-0.595468 0-9.080887 0.595468 2.084138 14.291232 2.381872 20.394779 0 0-0.297734 4.01941-0.148867 2.233005-3.721676 2.233005-2.828473 0-4.763744-10.718425-0.893202-6.401281-1.786404-12.951429 0-1.042069-1.042069-3.572808-0.893202-2.679606-0.893202-4.019409 0-3.721675 5.656946-4.614877 0.446601 0 1.48867 0.148867t1.48867 0.148867h15.48217q21.43685 0 21.43685 0 13.69576-0.595468 26.49832-2.381872 0.89321-0.446601 2.679608-0.893202 3.12621-0.297735 5.35921 1.48867 2.23301 1.637537 1.48867 4.763744z" fill="#fff"/>
           </g>
         </svg>
-        <div>TurboWarp Extension Gallery</div>
+        <div>Scratch 创世界 的 TurboWarp 扩展库</div>
       </h1>
 
-      <p>This is the official extension gallery, where you can get extensions that aren't limited by the extension sandbox. All of the extensions here are reviewed for safety.</p>
-      <p>You can also find these extensions in TurboWarp's "Add Extension" menu.</p>
+      <p>这是 Scratch 创世界 和 TurboWarp 官方扩展库，您可以在这里获取不受扩展沙箱限制的扩展。此处所有扩展均经过安全检查。</p>
+      <p>您也可以在 TurboWarp 的“添加扩展”菜单中找到这些扩展。</p>
 
       <div class="infobox infobox-warning">
-        <div class="infobox-title">These extensions are not compatible with Scratch.</div>
-        Projects that use these extensions can't be opened in Scratch or uploaded to the Scratch website.
-        They can still be used in <a href="https://packager.turbowarp.org/">the TurboWarp packager</a>.
+        <div class="infobox-title">这些扩展与 官方Scratch 不兼容。</div>
+        使用这些扩展的项目可能无法在 官方Scratch 中打开或上传到 Scratch 创世界 以外的网站。
+        它们仍可在 <a href="https://packager.turbowarp.org/">TurboWarp 打包器</a> 中使用。
       </div>
 
       <div class="infobox">
-        <div class="infobox-title">Some extensions may not work in TurboWarp Desktop.</div>
-        To make sure extensions work offline, each release of <a href="https://desktop.turbowarp.org/">TurboWarp Desktop</a> comes with a copy of these extensions as of its release date, so some extensions may be outdated or missing.
-        Update to the latest version for the best results.
+        <div class="infobox-title">某些扩展可能在 TurboWarp 桌面版中无法使用。</div>
+        为确保扩展在离线状态下可用，<a href="https://desktop.turbowarp.org/">TurboWarp 桌面版</a> 的每个版本都附带截至其发布日期的这些扩展副本，因此某些扩展可能已过时或缺失。
+        为获得最佳效果，请更新到最新版本。
       </div>
     </div>
 
     <% if (mode === "development") { %>
       <div class="section">
         <div class="development-tools">
-          <h2>Development Server Tools</h2>
+          <h2>开发服务器工具</h2>
           <p>
-            Most recently modified extensions:
+            最近修改的扩展：
             <% for (const extensionSlug of mostRecentExtensions) { %>
               <a href="<%= getRunExtensionURL(extensionSlug) %>"><%= extensionSlug %>.js</a>
             <% } %>
@@ -436,14 +436,14 @@
 
     <div class="section extensions-outer">
       <div class="search-container">
-        <input type="text" id="search-bar" class="search-base search-bar" placeholder="Search for extensions...">
+        <input type="text" id="search-bar" class="search-base search-bar" placeholder="搜索扩展...">
         <select class="search-base search-sort" id="search-sort">
-          <option value="original">Sort: Default</option>
-          <!--<option value="option2">Sort: Relevance</option>-->
-          <option value="abc">Sort: ABC</option>
-          <option value="zxy">Sort: ZXY</option>
-          <!--<option value="newest">Sort: Newest</option>
-          <option value="oldest">Sort: Oldest</option>-->
+          <option value="original">排序：默认</option>
+          <!--<option value="option2">排序：相关性</option>-->
+          <option value="abc">排序：按名称 A-Z</option>
+          <option value="zxy">排序：按名称 Z-A</option>
+          <!--<option value="newest">排序：最新优先</option>
+          <option value="oldest">排序：最早优先</option>-->
         </select>
       </div>
       <div class="extensions">
@@ -456,11 +456,11 @@
               // do nothing
             } else if (i === people.length - 2) {
               if (people.length > 2) {
-                result += ',';
+                result += '、';
               }
-              result += ' and ';
+              result += ' 和 ';
             } else {
-              result += ', ';
+              result += '、';
             }
           }
           return result;
@@ -473,24 +473,24 @@
               <img loading="lazy" src="<%= image %>" class="extension-image">
 
               <div class="extension-buttons">
-                <button class="copy" data-copy="<%= getFullExtensionURL(extensionSlug) %>">Copy URL</button>
-                <a class="open" href="<%= getRunExtensionURL(extensionSlug) %>">Open Extension</a>
+                <button class="copy" data-copy="<%= getFullExtensionURL(extensionSlug) %>">复制链接</button>
+                <a class="open" href="<%= getRunExtensionURL(extensionSlug) %>">打开扩展</a>
 
                 <% if (metadata.hasDocumentation) { %>
-                  <a class="docs" href="<%= getDocumentationURL(extensionSlug) %>">Documentation</a>
+                  <a class="docs" href="<%= getDocumentationURL(extensionSlug) %>">查看文档</a>
                 <% } %>
 
                 <% if (metadata.samples.length === 1) { %>
-                  <a class="sample" href="<%= getRunSampleURL(metadata.samples[0]) %>">Sample Project</a>
+                  <a class="sample" href="<%= getRunSampleURL(metadata.samples[0]) %>">示例项目</a>
                 <% } else if (metadata.samples.length > 1) { %>
-                  <button class="sample sample-list-button">Sample Projects</button>
+                  <button class="sample sample-list-button">示例项目列表</button>
                 <% } %>
               </div>
             </div>
 
             <% if (metadata.samples.length > 1) { %>
               <div class="sample-list">
-                <h3><%= metadata.name %> Sample Projects:</h3>
+                <h3><%= metadata.name %> 的示例项目：</h3>
                 <% for (const sample of metadata.samples) { %>
                   <a class="sample-list-item" href="<%= getRunSampleURL(sample)%>"><%= sample.getTitle() %></a>
                 <% } %>
@@ -502,11 +502,11 @@
               <%= metadata.description %>
               <%-
                 (metadata.original.length && metadata.by.length) ? (
-                  `Created by ${peopleToHTML(metadata.original)}. Updated by ${peopleToHTML(metadata.by)}.`
+                  `由 ${peopleToHTML(metadata.original)} 创建。由 ${peopleToHTML(metadata.by)} 更新。`
                 ) : metadata.by.length ? (
-                  `Created by ${peopleToHTML(metadata.by)}.`
+                  `由 ${peopleToHTML(metadata.by)} 创建。`
                 ) : metadata.original.length ? (
-                  `Created by ${peopleToHTML(metadata.original)}.`
+                  `由 ${peopleToHTML(metadata.original)} 创建。`
                 ) : ''
               %>
             </p>
@@ -516,13 +516,13 @@
     </div>
 
     <footer class="section">
-      <p>TurboWarp is not affiliated with Scratch, the Scratch Team, or the Scratch Foundation.</p>
+      <p>Scratch 创世界、TurboWarp 与 Scratch、Scratch 团队或 Scratch 基金会无关。</p>
       <div class="links">
-        <a href="https://github.com/TurboWarp/extensions/tree/master/images#readme">Image Attribution</a>
+        <a href="https://github.com/TurboWarp/extensions/tree/master/images#readme">图片署名</a>
         -
-        <a href="https://github.com/TurboWarp/extensions">GitHub</a>
+        <a href="https://github.com/PerfectMYGHY/scratch-cw-extensions">GitHub</a>
         -
-        <a href="https://docs.turbowarp.org/development/extensions/introduction">Developer Documentation</a>
+        <a href="https://docs.turbowarp.org/development/extensions/introduction">开发者文档</a>
       </div>
     </footer>
   </body>
