@@ -1,3 +1,5 @@
+import metadataTranslations from '../translations/extension-metadata.json' with { type: 'json' };
+
 class Person {
   constructor(name, link) {
     /** @type {string} */
@@ -60,9 +62,10 @@ const parsePerson = (person) => {
 
 /**
  * @param {string} extensionCode
+ * @param {string} slug
  * @return {Extension}
  */
-const parseMetadata = (extensionCode) => {
+const parseMetadata = (extensionCode, slug) => {
   const metadata = new Extension();
 
   for (const line of extensionCode.split("\n")) {
@@ -86,10 +89,10 @@ const parseMetadata = (extensionCode) => {
         metadata.id = value;
         break;
       case "name":
-        metadata.name = value;
+        metadata.name = metadataTranslations?.['zh-cn']?.[`${slug}@name`] || value;
         break;
       case "description":
-        metadata.description = value;
+        metadata.description = metadataTranslations?.['zh-cn']?.[`${slug}@description`] || value;
         break;
       case "license":
         metadata.license = value;

@@ -213,9 +213,13 @@ class ExtensionFile extends BuildFile {
     return data;
   }
 
-  getMetadata() {
+  /**
+   * @param {string} slug
+   * @return {Extension}
+   */
+  getMetadata(slug) {
     const data = fs.readFileSync(this.sourcePath, "utf-8");
-    return parseMetadata(data);
+    return parseMetadata(data, slug);
   }
 
   async validate() {
@@ -294,7 +298,7 @@ class ExtensionFile extends BuildFile {
       return null;
     }
 
-    const metadata = this.getMetadata();
+    const metadata = this.getMetadata(this.slug);
     const slug = this.slug;
 
     const getMetadataDescription = (part) => {
@@ -409,7 +413,7 @@ class HomepageFile extends BuildFile {
       this.featuredSlugs.map((slug) => [
         slug,
         {
-          ...this.extensionFiles[slug].getMetadata(),
+          ...this.extensionFiles[slug].getMetadata(slug),
           hasDocumentation: this.withDocs.has(slug),
           samples: this.samples.get(slug) || [],
         },
@@ -468,7 +472,7 @@ class JSONMetadataFile extends BuildFile {
     for (const extensionSlug of this.featuredSlugs) {
       const extension = {};
       const file = this.extensionFiles[extensionSlug];
-      const metadata = file.getMetadata();
+      const metadata = file.getMetadata(extensionSlug);
       const image = this.extensionImages[extensionSlug];
 
       extension.slug = extensionSlug;
